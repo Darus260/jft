@@ -216,6 +216,1996 @@ body{
 <!-- ========= SCRIPT ASLI TETAP ========= -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- 🔽 JavaScript Anda tetap sama, tidak saya ubah 🔽 -->
+<script>
 
+
+
+// 1. Inisialisasi wadah
+    
+var semuaPaket = {};
+
+    
+   
+
+semuaPaket["PAKET BASU"] = [
+        
+{          q: "<i></i>", 
+            img: "https://lh3.googleusercontent.com/u/0/d/1o88z83xWAfWLYioh5NdUL21uv_ZXlMfJ",
+            a: ["じてんしゃ", "くるま", "バス", "でんしゃ"], correct: 2 },
+
+];
+
+    
+
+semuaPaket["PAKET CHICHI"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1fFheBquUXTexvRukmNZ36krGJ9kWf-aD",
+            a: ["母", "父", "姉", "兄"], correct: 1 },
+
+ ];
+
+
+semuaPaket["PAKET JITENSHA"] = [
+        
+
+ {      q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/17F-JBB3EB5f_QOc5fN6SdrlcIFmqhL3W",
+         a: ["自動車 : じどうしゃ", "自転車 : じてんしゃ", "電車 : でんしゃ"], correct: 1 },
+
+ {      q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1QDgK1MlXwtURJsA0Ir73XxpG9OOfMPia",
+         a: ["病院 : びょういん", "病気 : びょうき", "病名 : びょうめい"], correct: 0 },
+
+ {      q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1i1EEkr-ApsFAPm8Hf1NT2c5pXfM7OZsK",
+         a: ["かける", "のせる", "つける"], correct: 2 },
+
+ {      q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1wVulQ1buvaw0CXhNQWtpKqJrRYmApQy-",
+         a: ["手 : て", "お腹 : おなか", "目 : め"], correct: 1 },
+
+        { q: "昨日の<b>天気</b>は悪かったですね。<br><br><u>Cuaca</u> kemarin buruk ya.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["でんき", "てんき", "けんき"], correct: 1 },
+
+        { q: "ボランチアの仕事は<b>忙しい</b>です 。<br><br>Pekerjaan sukarelawan itu <u>sibuk</u>.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["いそがしい", "ひましい", "せわしい"], correct: 0 },
+
+        { q: "昨日、<b>図書館</b>から借りた本はこれです。<br><br>Buku yang telah (saya) pinjam dari <u>perpustakaan</u> kemarin, adalah ini.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["としょかん", "びじゅつかん", "はくぶつかん"], correct: 0 },
+
+        { q: "A: インドネシアのケーキです。よかったら、どうぞ。<br>B: ああ、ごめんなさい、あまいものは .......... です。<br><br>A: Ini kue dari Indonesia. Kalau mau, silahkan.<br>B: Ah, maaf, saya <u>kurang suka/tidak terlalu bisa</u> makan makanan manis.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["すき", "ほしい", "にがて"], correct: 2 },
+
+        { q: "昨日のイベントはあまり .......... 。<br>Acara kemarin <u>tidak</u> begitu <u>menarik</u>.<br><br>A: 休みはどこへいきましたか。<br>B: どこにもいきません でした、家で映画を見ました。<br>A: 映画はどうでしたか。<br>B: あまり .......... 。<br>A: Kamu pergi berlibur ke mana?<br>B: Aku tidak pergi ke mana-mana, aku menonton film di rumah.<br>A: Bagaimana filmnya?<br>B: Filmnya <u>tidak</u> begitu <u>menarik</u>.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["楽しかった : たのしかった", "面白くなかった : おもしろくなかった", "おもしろくないでした"], correct: 1 },
+
+        { q: "毎朝、がっこうへいくまえに、シャワーを .......... 。<br><br>Setiap pagi, sebelum pergi ke sekolah, <u>mandi</u> menggunakan shower.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["浴びます : あびます", "泳ぎます : およぎます", "入ります : はいります"], correct: 0 },
+
+        { q: "使ったものは .......... もとのところにかえしてください。<br><br>Barang yang sudah digunakan, <u>harus/pastikan</u> dikembalikan ke tempat asalnya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["たとえば", "まず", "かならず"], correct: 2 },
+
+        { q: "休みの日は .......... を見に行きます。<br><br>Pada hari libur, pergi untuk menonton <u>film</u>.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["銀行", "映画", "英語"], correct: 1 },
+
+        { q: "今日はパーティーに .......... 。<br><br>Hari ini <u>pergi</u> ke pesta.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["行ないます", "帰ります", "行きます"], correct: 2 },
+
+        { q: "部屋の中を探しました、大切な指輪はまだ .......... 。<br>へやのなかをさがしました、たいせつなゆびわはまだ .......... 。<br><br>Saya sudah mencari di dalam kamar, tapi cincin yang berharga masih <u>belum ditemukan</u>.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["見つけません", "見つかりません", "見つかれません"], correct: 1 },
+
+        { q: ".......... で地下鉄に乗ります。<br><br>Naik kereta bawah tanah di <u>stasiun</u>.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["駅 : えき", "バス", "自転車 : じてんしゃ"], correct: 0 },
+
+        { q: "この部屋のものをホールに .......... ください。<br><br>Tolong <u>pindahkan/angkut</u> barang-barang di kamar ini ke aula.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["持って : もって", "帰って : かえって", "運んで : はこんで"], correct: 2 },
+
+        { q: "A: これは私が作りました。魚の .......... です。<br>B: ありがとうございます。<br><br>A: Ini saya yang buat. Ini adalah <u>masakan</u> ikan.<br>B: Terima kasih banyak.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["料理 : りょうり", "食べ物 : たべもの", "飲み物 : のみもの"], correct: 0 },
+
+        { q: "A: しゅみはなんですか？<br>B: どくしょです。.......... れきしのほんがすきです。<br>A: ええ、すごいですね。<br><br>A: Apa hobi Anda?<br>B: Membaca buku. <u>Khususnya</u>, saya suka buku sejarah.<br>A: Wah, hebat ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["べつに", "特に : とくに", "たまに"], correct: 1 },
+
+        { q: "A: 京都のツアーはいかがでしたか？<br>B: きれいなお寺たくさん見られて、よかったです。<br>A: それはよかったです。<br>B: でも、京都の車が .......... 渋滞で疲れました。<br><br>A: Bagaimana tur di Kyoto-nya?<br>B: Bisa melihat banyak kuil yang indah, jadi saya senang.<br>A: Syukurlah kalau begitu.<br>B: Tapi, mobil di Kyoto <u>terlalu banyak</u>, saya lelah karena macet.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/1kfpxXJiXaNGQs-yjSdRbftlPwFiFe_Uc",
+        a: ["多すぎます : おおすぎます", "少なすぎます : すくなすぎます", "速すぎます : はやすぎます"], correct: 0 },
+
+        { q: "A: アリさん、イベントのよていかわったことをしっていますか？<br>B: へえ、かわったんですか？しりませんでした。<br>A: じゃあ、よていをほかのひとに .......... ために、このメッセージをつたえてください。<br>B: はい、わかりました。<br><br>A: Ari, apakah kamu tahu bahwa jadwal acaranya sudah berubah?<br>B: Eh, berubah ya? Saya tidak tahu.<br>A: Kalau begitu, untuk <u>mengumumkan/menginfokan</u> jadwalnya ke orang lain, tolong sampaikan pesan ini.<br>B: Baik, saya mengerti.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["教える / おしえる", "見せる / みせる", "お知らせする / おしらせする"], correct: 2 },
+
+        { q: "A: 何がおいしいですか？<br>B: この店でおいしいのは、バナナの .......... ですよ。<br>A: じゃあ、それにします。<br><br>A: Apa yang enak?<br>B: Yang enak di toko ini adalah <u>buah</u> pisangnya.<br>A: Kalau begitu, saya pilih itu.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["料理 : りょうり", "くだもの", "飲み物 : のみもの"], correct: 1 },
+
+        { q: "A: 金曜日の午後 .......... , 銀行にいきたいんです。<br>B: そうですか、はい、大丈夫です。<br><br>A: <u>Bolehkah saya izin cuti/libur</u> Jumat sore? Saya ingin pergi ke bank.<br>B: Begitu? Iya, tidak apa-apa.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["休んでもいいですか", "行ってもいいですか", "来てもいいですか"], correct: 0 },
+
+        { q: "A: ネットを見て、びっくりしました。<br>B: どうしたんですか。<br>A: 私の国の有名なサッカー先週が日本人の歌手と ..........  。<br>B: すごいですね。<br>A: 好きな歌手ですから、嬉いいです。<br><br>A: Saya melihatnya di internet dan terkejut.<br>B: Apa yang terjadi?<br>A: Pemain sepak bola terkenal dari negara saya <u>katanya sudah menikah</u> dengan penyanyi Jepang.<br>B: Itu luar biasa.<br>A: Karena dia penyanyi favorit saya, saya senang.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["会ったそうです: Atta sou desu", "結婚したそうです : Kekkon shita sou desu", "別れたそうです : Wakareta sou desu"], correct: 1 },
+
+        { q: "A: あのう、すみません、ここは .......... ですか。<br>B: ここは都響駅ですよ。<br><br>A: Anu, permisi, ini <u>dimana</u>?<br>B: Ini adalah Stasiun Tokyo lho.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["いつ", "どこ", "どんな"], correct: 1 },
+
+        { q: "A: 何を飲みますか。<br>B: えっとー、ジュースを .......... 。<br><br>A: Mau minum apa?<br>B: Emm, <u>tolong</u> jus, ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ください", "どうぞ", "お願いします"], correct: 2 },
+
+        { q: "A: この後 .......... 。<br>B: お腹がすきましたね、何かを食べませんか。<br>A: そうですね、食べましょう。<br><br>A: <u>Mau bagaimana</u> setelah ini?<br>B: Saya lapar nih, bagaimana kalau kita makan sesuatu?<br>A: Begitu ya, ayo kita makan.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?<br>Paling standar dan natural harusnya jawaban A lebih umum. Tapi kunci jawaban disini adalah jawaban C.</i>",
+        a: ["何をしますか", "どこに行きますか", "どうしますか"], correct: 2 },
+
+        { q: "A: ５月に北海道に行きたいんですが、何を持ったらいいですか。<br>B: ５月はまだ寒いですよ、セーターや上着を持った方がいいと思います。<br>A: ........ もう暖かいと思ってました。<br><br>A: Saya ingin pergi ke Hokkaido bulan Mei, sebaiknya bawa apa ya?<br>B: Bulan Mei di sana masih dingin lho, menurut saya lebih baik membawa sweter atau jaket.<br>A: <u>Oh, begitu ya?</u> Saya pikir tadi sudah hangat.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["そうなんですか", "本当ですか", "そうですか"], correct: 0 },
+
+        { q: "A: あれー、財布がありません、コンビニにいるときあったのに。<br>B: .......... 。<br><br>A: Lho, dompet saya tidak ada, padahal tadi ada waktu di minimarket.<br>B: <u>Mungkin saja</u> ..... <br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?<br>Pilihan jawaban B, asalkan ada kalimat lanjutannya. Sebenarnya pilihan C lebih tepat, menunjukkan rasa kaget atau simpati terhadap berita buruk yang disampaikan. 'Hontou ni? Benarkah?'</i>",
+        a: ["どこに置いたの", "もしかしたら ", "本当に？"], correct: 1 },
+
+        { q: "A: さっき、アラさんから電話がありましたよ。<br>B: そうですか。アラさん、なにが .......... か？<br><br>A: Tadi ada telepon dari Ara-san lho.<br>B: Oh begitu. Ara-san, apa yang <u>telah dikatakan</u>?<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["言った", "言っています", "言っていました"], correct: 2 },
+
+        { q: "A: 今日はありがとうございました。晩ご飯、.......... 。おいしかったです。<br>B: いいえ、いいえ、また遊びに来てくださいね。<br> A: ありがとうございます。おじゃましました。<br><br>A: Terima kasih untuk hari ini. <u>Terima kasih</u> atas makan malamnya. Enak.<br>B: Sama-sama, silakan datang bermain lagi ya.<br>A: Terima kasih. Permisi (diucapkan saat pulang dari rumah orang).<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ごちそうさまでした", "ごめんください", "いただきます"], correct: 0 },
+
+        { q: "A: すみません、道に.......... 、ちょっとおくれます。<br>B: 大丈夫ですか？<br> A: 大丈夫です、もうすぐつきます。<br><br>A: Maaf, karena <u>tersesat</u> di jalan, saya akan sedikit terlambat.<br>B: Apakah Anda baik-baik saja?<br>A: Saya baik-baik saja, sebentar lagi sampai.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["まようで", "まよって", "まよった"], correct: 1 },
+
+        { q: "A: 日本語の勉強はどうですか？<br>B: .......... です。ぶんぽうはむずかしいです。でも、漢字はおもしろいです。<br> A: そうですか。<br><br>A: Belajar bahasa Jepangnya bagaimana?<br>B: <u>Lumayan/Biasa saja</u>. Tata bahasanya sulit, tapi kanjinya menarik<br>A: Begitu ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["まあまあ", "どんどん", "いろいろ"], correct: 0 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Kata kunci : サッカーをします",
+       q: "Apa yang dilakukan laki-laki itu saat liburan?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/181tsfwSg4pLs7HSPtsUK8Rf1f0JKo049",
+        "https://lh3.googleusercontent.com/u/0/d/1OtNizXsPuyvwYoje_HA2l7Dd8-4ueyiF",
+        "https://lh3.googleusercontent.com/u/0/d/1ZNdovFklCBDm-BIXKrcQouo-ifHwN4WA",
+        "https://lh3.googleusercontent.com/u/0/d/1_IH-O05qchEHVGkeHHSdF89UMNXvQzmv"
+        ], correct: 0, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakapan dua orang. Sepertinya mengenal orang itu, kalau tidak salah namanya Ikeda-san, agak lupa namanya.<br><br>Kata kunci :<br>眼鏡 / めがね",
+       q: "Yang mana orangnya?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1KHNxty5DWaisg06MjKFpT94FCw8-BiyC",
+        "https://lh3.googleusercontent.com/u/0/d/1m11GM87CRCDqzdFtbNfqeJGt-tRWUaaV",
+        "https://lh3.googleusercontent.com/u/0/d/1ZaKLrMGl6ZzG8o6nG1uZ-4vWNovd68he",
+        "https://lh3.googleusercontent.com/u/0/d/10uiMFTc027dg5C_VNYOEGVoCqklCOSn0"
+        ], correct: 1, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Pergi ke Okinawa melakukan apa? Telah melakukan diving, tapi harus berhenti karena hujan. Setelah itu naik perahu<br><br>Kata kunci :<br>ふね atau ボート",
+       q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1OsuT3suQh3EB5DtKKdLUSiEies0D4XlD",
+        "https://lh3.googleusercontent.com/u/0/d/1in2YC5P_gqgc4Fyk01BMTDRqaNi9ecK0",
+        "https://lh3.googleusercontent.com/u/0/d/1aQ832CbY9RoS9eDRNz82WVogPyaoOCu5",
+        "https://lh3.googleusercontent.com/u/0/d/1JiT5uhELSZkiXgPz2Ljy5j94T5Y2XUC9"
+        ], correct: 2, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang perempuan membeli tiket.<br>二百五十円, にひゃくごじゅうえん",
+       q: "Berapa harga tiketnya?",
+       a: ["220円", "230円", "250円"], correct: 2 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakaan tentang kelas bahasa asing.<br>Untuk kelas bahasa Jepang pada hari Sabtu.",
+       q: "Kelas bahasa Jepang hari apa?",
+       a: ["月曜日", "土曜日", "金曜日"], correct: 1 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakaan tentang kulkas. Laki-laki bertanya harus melakukan apa dengan kulkas yang lama ini. Dijawab oleh lawan bicara, harus mengeluarkan buah-buahan saja.",
+       q: "Apa yang dilakukan laki-laki itu?",
+       a: ["たべものをいれます", "くだものをだします", "やさいをだします"], correct: 1 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Kata kunci :<br>コーヒーカップ : Koohii kappu<br>茶色の箱, ちゃいろのはこ : Chairo no hako",
+    q1: "1. Piringnya diletakkan dimana?",
+    a1: ["Gambar piring disebelah piring kotor", "Gambar piring disebelah teh", "Gambar piring disebelah cangkir kopi"],
+    correct1: 2,
+    q2: "2. Sumpitnya diletakkan dimana?",
+    a2: ["Gambar sumpit didalam kotak hitam", "Gambar sumpit didalam kotak cokelat", "Gambar sumpit didalam kotak merah"],
+    correct2: 1},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Sedang periksa di rumah sakit.<br>Buah-buahan yang boleh dimakan adalah pisang.<br>Di pagi hari minum obat, yaitu : 1 obat warna putih dan 2 obat warna merah.<br><br>Kata Kunci :<br>Obat 薬, くすり<br>Putih 白い, しろい<br>Merah 赤い, あかい<br>Satuan jumlah untuk obat adalah 個 ko",
+    q1: "1. Buah apa yang boleh dimakan?",
+    a1: ["バナナ", "りんご", "みかん"],
+    correct1: 0,
+    q2: "2. Obat apa yang diminum di pagi hari?",
+    a2: ["白い薬が1個と赤い薬が2個", "赤い薬が1個と白い薬が2個", "白い薬が2個と青い薬が2個"],
+    correct2: 0},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada pengumuman dari direktur. Setelah makan siang disuruh pergi ke resepsionis. Karena akan mempersiapkan untuk rapat.<br><br>Kata Kunci :<br>Direktur 社長, しゃちょう<br>Resepsionis 受付, うけつけ<br>Ruang rapat 会議室, かいぎしつ",
+    q1: "1. Setelah makan siang disuruh kemana?",
+    a1: ["Gambar uketsuke", "Gambar hotel", "Gambar depaato"],
+    correct1: 0,
+    q2: "2. Tempat apa yang dipersiapkan?",
+    a2: ["Gambar uketsuke", "Gambar kaigishitsu", "Gambar shokudo"],
+    correct2: 1},
+
+{ situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Ada pesan di messenger.<br>お誕生日おめでとうございます！<br>Otanjoubi omedetou gozaimasu!",
+       q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1xHVd_iPyrA4bK5Jh6gMJRPLioKw67vza",
+        "https://lh3.googleusercontent.com/u/0/d/10RTaVHth03Cayi0uWRe2IKaCAyPXYt5v",
+        "https://lh3.googleusercontent.com/u/0/d/1RO8HHctfSqx5qDk0NBQMXuLoHpva0EkY",
+        "https://lh3.googleusercontent.com/u/0/d/149J0udKcyjYS2XG64b1RQ-3oiteam2Q2"
+        ], correct: 0, isImageOption: true },
+
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Ada pamflet pesta, yang acaranya diadakan hari ini.",
+    
+    q1: "1. 今日は何がありますか?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1eBQOAWTTbfXKZZtBRZWU9Ln697vbn9oT",
+        "https://lh3.googleusercontent.com/u/0/d/1UUAcMbxcdDpPUH_G6FVegBpNbIlRpAJi",
+        "https://lh3.googleusercontent.com/u/0/d/1vQNPR4q9yXbqHQ8Rpu_4ErBbZSiyuMkz",
+        "https://lh3.googleusercontent.com/u/0/d/1ufMB2FWrJrw9GTRgcTGzf9KxJsO2MFze"
+    ], correct1: 0,
+
+    q2: "2. Kapan pergi ke pesta?",
+    a2: ["今日パーティーに行きます", "明日パーティーに行きます", "昨日パーティーに行きました"], correct2: 0},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Ada email dari A-san kepada B-san. A-san memberitahukan bahwa dia mendapatkan telepon dari Yamada. Dan menyuruh pergi ke kantor Yamada.",
+    q1: "1. Emailnya memberitahukan apa?",
+    a1: ["たくさんから電話がある", "山田さんから電話がある", "鈴木さんから電話がある"],
+    correct1: 1,
+    q2: "2. Disuruh pergi kemana?",
+    a2: ["たくさんの家", "山田さんの事務所", "山田さんの会社"],
+    correct2: 1},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Pamflet berisi informasi tentang arahan ketika ada bencana alam. Di pamflet diarahkan agar mempersiapkan buah-buahan yang cukup untuk 1 minggu (7 hari). Dan ketika terjadi gempa bumi :<br>何も持たないで、すぐに高いところに逃げてください。<br>Nanimo motanaide, sugu ni takai tokoro ni nigete kudasai.<br>Jangan membawa apa pun, dan segera lari ke tempat yang tinggi.<br><br>地震, じしん : Gempa<br>1週間 / 7日 : 1 Minggu / 7 Hari",
+    q1: "1. Persiapan buah-buahan sebaiknya untuk berapa hari?",
+    a1: ["1週間 / 7日", "1年 / 326日", "1月 / 30日"],
+    correct1: 0,
+    q2: "2. Jika terjadi gempa apa yang harus dilakukan?",
+    a2: ["お金を持ってくる", "食べ物を持ってくる", "何も持ってこない"],
+    correct2: 2},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Silahkan cek informasi dalam dokkai dengan teliti.<br>Pertanyaan kedua, cek teks di baris kedua terakhir.",
+    q1: "1. Apa yang dilakukan di WaiWai Cafe?",
+    a1: ["日本語を話します", "メールを書きます"],
+    correct1: 0,
+    q2: "2. はじめてその人は何時行きますか",
+    a2: ["09.45", "09.30"],
+    correct2: 0},
+
+ ];
+
+semuaPaket["PAKET KAGI"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1_FsN7cfnDovdcqm4eCqnnp_5yyY_xoWY",
+            a: ["かぎ", "", "", ""], correct: 0 },
+
+ ];
+
+semuaPaket["PAKET KAWAII"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1dFiySDX0xegSIh_apQAoz6tEW24TXb9d",
+            a: ["", "", "", "かわいい"], correct: 3 },
+ ];
+
+semuaPaket["PAKET KOUEN"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1C_lOCKjjoIgcXFunC16qBWYUyMU_GtTF",
+            a: ["こうえん", "", "", ""], correct: 0 },
+
+];
+
+semuaPaket["PAKET KUDAMONO"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1LmawqfOj3tgNr1z1oqHHS8E-8NVinbYk",
+            a: ["わすれもの", "ほんもの", "くだもの"], correct: 2 },
+
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1jLJLFLXFA1HS06AR_zsnFuk4seTOnxQB",
+            a: ["引きます: ひきます", "押します : おします", "入れます : いれます"], correct: 1 },
+
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1OCCcZLpyk5DX9eenDyE7Sm40XamstP4p",
+            a: ["こうつうじこ", "しんごうこわれた", "たいふうがくる"], correct: 0 },
+
+        { q: "日本語の試験は<b>今週</b>行われます。<br><br>Ujian bahasa Jepang diadakan minggu ini.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["こんげつ", "こんしゅう", "こんしゅ"], correct: 1 },
+
+        { q: "先生にメールを<b>送ります</b>。<br><br>Saya mengirim email kepada guru.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["はしります", "かぶります", "おくります"], correct: 2 },
+
+        { q: "私はデザインの会社で<b>働きます</b>。<br><br>Saya bekerja di perusahaan desain.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["はたらきます", "あそびます", "やすみます"], correct: 0 },
+
+        { q: "私の家はコンビニから .......... 、便利です。<br><br>Rumah saya dekat dari minimarket, jadi praktis/nyaman.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["近くに", "近くで", "近くて"], correct: 2 },
+
+        { q: "日曜日、公園にお祭りがありますよ。<br>いっしょに .......... 。<br><br>Hari Minggu, ada festival di taman, lho.<br>Maukah pergi bersama?<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["行きませんか", "行きます", "行きましょう"], correct: 0 },
+
+        { q: "あたらしい ふくが .......... 。<br><br>Ingin baju baru.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["欲しいです : ほしいです", "履きます : はきます", "取ります : とります"], correct: 0 },
+
+        { q: "これ、お土産です。京都から .......... 。<br><br>Ini oleh-oleh, membelinya dari Kyoto.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["とってきました", "もってきました", "かってきました"], correct: 2 },
+
+        { q: "今日は曇っていますね。雨が .......... そうです。<br><br>Hari ini mendung ya, kelihatannya akan turun hujan.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ふり", "ふる", "ふった"], correct: 0 },
+
+        { q: "しゅみはピアノを .......... ことです。<br><br>Hobi saya adalah bermain piano.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ひきます", "ひく", "ひいて"], correct: 1 },
+
+        { q: "A: 来週は誕生日ですね。プレゼントは何がほしいですか。<br>B: そうですね。私は本が好きですから、新しい本を ... 。<br><br>A: Minggu depan ulang tahun ya. Ingin hadiah apa?<br>B: Jadi begini, karena saya suka buku. Saya pikir akan membeli buku baru.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["読めます", "買おうと思います", "買いません"], correct: 1 },
+
+        { q: "すみません、今何時ですか？",img: "https://lh3.googleusercontent.com/u/0/d/1IScjGtpK_8wxOoLYBdkKX-6AagVe7GF5",
+            a: ["くじ : 九時", "きゅうじ : 九次", "きゅうじ : 旧事"], correct: 0 },
+
+        { q: "A: 初めまして、アラです。よろしくお願いします。<br>B: こちらこそ、.......... 。<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["有難うございます", "お願いします", "どうぞよろしく"], correct: 2 },
+
+        { q: "A: すみません、このかばんはいくらですか？<br>B: 4800円 です。<br>A: すみません、きこえていないんですが、.......... おねがいします。<br>B: 4800円 です。<br><br>A: Permisi, tas ini harganya berapa?<br>B: Harganya 4800 Yen.<br>A: Maaf, saya tidak dengar, tolong ucapkan sekali lagi.<br>B: 4800 Yen.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["もういちど", "もうひとつ", "もうひとり"], correct: 0 },
+
+        { q: "A: 新しい自転車ですね！ とてもかるそうですね。<br>B: ええ、この自転車は とても .......... ですよ。<br>A: いいですね。私も毎日使いたいですから、おなじものをかおうと思います。<br><br>A: Sepeda baru ya! Kelihatannya sangat ringan.<br>B: Iya, sepeda ini sangat mudah dinaiki lho.<br>A: Bagus ya. Karena saya juga ingin pakai setiap hari, saya rasa saya akan membeli barang yang sama.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["のって", "のりやすい", "のります"], correct: 1 },
+
+        { q: "A: にほんのせいかつにもうなれましたか。<br>B: もうなれましたけど、さびしいです。でも、まいにちりょうしんと .......... から、うれしいです。<br>A: よかったですね。<br><br>A: Apakah sudah terbiasa dengan kehidupan di Jepang?<br>B: Sudah terbiasa, tapi (kadang) merasa sepi. Tapi, karena setiap hari bisa menelepon orang tua, saya senang.<br>A: Syukurlah kalau begitu.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["電話ができます", "会社ができます", "電車ができます"], correct: 0 },
+
+        { q: "A: レストランへ行く前に、はやめにレストランを .......... ほうがいいですよ。<br>B: そうですね。<br><br>A: Sebelum pergi ke restoran, lebih baik reservasi restoran lebih awal lho.<br>B: Benar juga ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["よやくして", "よやくした", "よやくしない"], correct: 1 },
+
+        { q: "A: ビマさん、日本語が上手ですね。<br>B: いいえ、.......... 。<br><br>A: Bima-san, bahasa Jepangnya pintar ya.<br>B: Tidak, tidak seperti itu kok (masih biasa saja).<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["じょうずかもしれません", "じょうずですよ", "そんなことないんです"], correct: 2 },
+
+        { q: "A: これ、京都のお土産です。よかったら食べてください。<br>B: わあ、ありがとうございます！..........？<br>A: ええ、どうぞ。<br>B: ううん、私にはあますぎるかもしれません。<br><br>A: Ini oleh-oleh dari Kyoto. Kalau mau, silakan dimakan.<br>B: Wah, terima kasih! Boleh nih (apa tidak apa-apa)?<br>A: Iya, silakan.<br>B: Hmm, buat saya ini agak terlalu manis.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["いきますか", "いいんですか", "いってきます"], correct: 1 },
+
+        { q: "A: アラさん、これお土産みやげです。<br>B: ありがとうございます、..........！<br><br>A: Ara-san, ini ada oleh-oleh.<br>B: Terima kasih banyak, saya terima ya (makanannya)!<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["いただきます", "いってきます", "ごちそうさまでした"], correct: 0 },
+
+        { q: "A: 休みの日に何をしますか。<br>B: 休みの日はいつも部屋で .......... をひきます。<br><br>A: Apa yang Anda lakukan pada hari libur?<br>B: Pada hari libur, saya selalu bermain piano di kamar.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["オートバイ", "ピアノ", "テニス"], correct: 1 },
+
+        { q: "A: すみません、ビールを .......... 。<br>B: はい、かしこまりました。<br><br>A: Permisi, tolong bir ya.<br>B: Baik, saya mengerti (pesanan Anda diterima).<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ありがとうございます", "いらっしゃいませ", "おねがいします"], correct: 2 },
+
+        { q: "A: 明日、いっしょにテニスをしませんか。<br>B: ええ、.......... 。<br><br>A: Besok, maukah main tenis bersama?<br>B: Iya, ayo kita main!<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["しましょう", "しません", "そうです"], correct: 0 },
+
+        { q: "A: アラさん、じしょを .......... 。<br>B: すみません、今日はじしょを持って来ませんでした。<br><br>A: Ara-san, maukah meminjamkan kamusnya kepada saya?<br>B: Maaf, hari ini saya tidak membawa kamus.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["貸したほうがいいですか", "貸してくれませんか", "貸せないでください"], correct: 1 },
+
+        { q: "A: 歯がいたいんですが、このあたりに歯医者がありますか。<br>B: はいしゃ？日本に来て、歯医者へ .......... 。<br><br>A: Gigi saya sakit, apakah di sekitar sini ada dokter gigi?<br>B: Dokter gigi? Sejak datang ke Jepang, saya belum pernah pergi ke dokter gigi.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["行ったことができます", "行ったかもしれません", "行ったことがありません。"], correct: 2 },
+
+{ situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Seorang laki-laki memprediksi setelah ini akan ada kejadian :<br>でんしゃがとまります。",
+       q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1PJtLQhN9KUHC67btYgg4BctqPrIvbF78",
+        "https://lh3.googleusercontent.com/u/0/d/1YLWYhd0sCzf2oXRFnGl0CR5AmPuahzsZ",
+        "https://lh3.googleusercontent.com/u/0/d/1vkQjk6XQOzC3YKHJ1Cf1NybHc5wL-dJn",
+        "https://lh3.googleusercontent.com/u/0/d/1q-97s0_ijnHbM0eDx5PDf-0KQJ63mnUy"
+        ], correct: 0, isImageOption: true },
+
+{ situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Seorang pelanggan bertanya kepada kurir eksedisi, barang/paketnya paling cepat akan tiba jam berapa. Karena dari pagi sampai siang sibuk.<br>Kurir menjawab antara じゅうにじからじゅうよじまで",
+       q: "Paketnya paling cepat tiba jam berapa?",
+       a: ["11.00-12.00", "12.00-14.00", "13.00-14.00"], correct: 1 },
+
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Direktur : Ara-san, tolong siapkan minuman untuk tamu di ruang rapat ya.<br>Ara-san : Baik. Apa yang harus saya bawa? Kopi atau teh?<br>Direktur : Tamu kita tidak minum kopi, jadi bawa teh saja.<br>Ara-san : Baik, teh ya. Berapa orang tamunya?<br>Direktur : Tamunya ada dua orang, tapi tolong siapkan satu lagi untuk saya.<br>Ara-san : Baik, mengerti.",
+    
+    q1: "1. Yang dibawa masuk ke ruangan?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1DKx7O0yWvBy3EUaYcDRFyWEhgTCo8Pwy",
+        "https://lh3.googleusercontent.com/u/0/d/1B-7gG0dXJVbb5GDOBdnCDcPxZjM1oUl7",
+        "https://lh3.googleusercontent.com/u/0/d/15cXSqN8CqA4o5kSmqNDzMWdWx1u_lJYz",
+        "https://lh3.googleusercontent.com/u/0/d/1huxd2FKzoHr_a7Lk4AfNDMwOMG7itKqy"
+    ], correct1: 2,
+
+    q2: "2. Berapa?",
+    a2: ["ふたつ", "みっつ", "むっつ"], correct2: 1},
+
+{ situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Ara-san : Hari Minggu ingin pergi ke mana?<br>Bima-san : Saya ingin pergi ke kebun binatang.<br>Ara-san : Bagus ya. Ingin melihat apa?<br>Bima-san : Saya ingin melihat panda.",
+       q: "日曜日にどこへ行きますか。",
+       a: ["どうぶつえん", "パンダ", "にちようび"], correct: 0 },
+
+{ isDouble: true,
+    situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>女: Permisi, tolong perlihatkan penyedot debunya.<br>店員: Baik, penyedot debu yang hitam ini harganya 15,000円.<br>女: Anu, yang putih di sana itu berapa harganya?<br>店員: Yang putih harganya 16,000円.<br>女: Hmm, yang putih juga bagus/bersih sih, tapi yang hitam lebih murah ya. Kalau begitu, saya beli yang hitam saja.<br>店員: Baik, saya mengerti. Terima kasih banyak.",
+    q1: "1. Apa yang dibeli wanita itu?",
+    a1: ["白いそうじき", "黒いそうじき", "赤いそうじき"],
+    correct1: 1,
+    q2: "2. Berapa harganya?",
+    a2: ["いちまんはっせんえん", "いちまんろくせんえん", "いちまんごせんえん"],
+    correct2: 2},
+
+{ isDouble: true,
+    situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Karyawan : Maaf, saya ingin mengambil libur minggu depan. Apa yang harus saya lakukan?<br>Direktur : Oh, kalau begitu tolong tuliskan alasan dan tanggalnya di kertas (surat pengajuan) ya.<br>Karyawan : Baik. Setelah ditulis, harus dikasihkan ke siapa?<br>Direktur : Tolong ditaruh saja di atas meja saya.<br>Karyawan : Kapan paling lambat saya harus mengumpulkannya?<br>Direktur : Tolong kumpulkan paling lambat tanggal 13.",
+    q1: "1. Setelah menulis surat pengajuan, bagaimana?",
+    a1: ["椅子の上に置いて", "机の下に置いて", "机の上に置いて"],
+    correct1: 2,
+    q2: "2. Dikumpulkan kapan?",
+    a2: ["じゅうさんにち", "じゅうよっか", "じゅうろくにち"],
+    correct2: 0},
+
+{ isDouble: true,
+    situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>Buchou : Semuanya, tolong dengarkan sebentar. Siang nanti kita akan mengadakan rapat.<br>Shain : Baik, di mana rapatnya?<br>Buchou : Di ruang rapat. Tolong berkumpul setelah makan siang.<br>Shain : Apakah jam 1 tepat?<br>Buchou : Bukan, karena ada persiapan, tolong datang jam 12.50.<br>Shain : Paham. Jam 12.50 di ruang rapat ya.",
+    q1: "1. Setelah makan siang berkumpul dimana?",
+    a1: ["かいぎしつ", "しょくどう", "じむしょ"],
+    correct1: 0,
+    q2: "2. Jam berapa?",
+    a2: ["じゅうさんじごふん", "じゅうにじごじゅっぷん", "じゅうさんじじゅうごふん"],
+    correct2: 1},
+
+{ situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>A: Onaka ga sukimashita ne. Ohirugohan ni nani o tabemasenka?<br>B: Sou desu ne. Karee wa dou desu ka. Asoko no resutoran, oishii desu yo.<br>A: Uun, kinou mo karee o tabemashita kara, raamen wa dou desu ka?<br>B: Aaa, raamen-ya wa kyou yasumi desu yo.<br>A: Sou desu ka. Jaa, sappari shita soba wa dou desu ka?<br>B: Ii desu ne. Sou shimashou! Soba o tabe ni ikimashou.",
+       q: "Makan siang, makan apa?",
+       a: ["カレー", "そば", "ラーメン"], correct: 1 },
+
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Situasi dalam audio Choukkai</b></i><br><br>A: Ii tenki desu ne. Takusan sentaku shimashita ne.<br>B: Ee, heijitsu wa isogashii desu kara. Tokoro de, ashita kara yasumi desu ne. Dokoka e ikimasu ka?<br>A: Iie. Saikin shigoto ga taihen deshita kara, yasumi no hi wa zutto uchi de neru tsumori desu.<br>B: Ahaha, sou desu ka. Yukkuri yasunde kudasai ne.",
+    
+    q1: "1. Orang itu sedang apa?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1nzZfU48ZtVlwyfBAJNCAirP402igF4ey",
+        "https://lh3.googleusercontent.com/u/0/d/1K2FHHiJJvaemU97kfsMkLC7G8h-UB4_5",
+        "https://lh3.googleusercontent.com/u/0/d/16Bt-e5963NNCY7_aQZPmcLFwyoFe_uOB",
+        "https://lh3.googleusercontent.com/u/0/d/1kbDU3cliNGt0wu4_XGsRTd32oqV2ZsRZ"
+    ], correct1: 0,
+
+    q2: "2. Hari libur pergi kemana?",
+    a2: ["ずっと家にいます", "としょかんへ行きます", "りょうりを作ります"], correct2: 0},
+
+
+{ situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Tentang Acara Musik</i>",
+       img: "https://lh3.googleusercontent.com/u/0/d/1DoCMYIy5UTWxM8S1kCyh2mOB7l_O1nr3",
+       q: "Acara musik jam berapa?",
+       a: ["じゅうくじ", "にじゅうじさんじっぷん", "にじゅういちじ"], correct: 2 },
+
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br>メール<br>から : アリ<br>まで : 田中<br><br>田中さん、メールありがとう！<br><br>来週の土曜日のパーティーですね。行きたいですが、残念ながら行けません。今、仕事がとても忙しいです。新しい商品がたくさんありますから、毎日たくさんの荷物を送らなければなりません。<br><br>最近は毎日夜遅くまで働いていますから、とても疲れました。<br>ですから、明日の休みはどこへも行きません。<br>家でずっと寝るつもりです。<br><br>また今度、誘ってください。ごめんね！",
+    
+    q1: "1. Ari-san sedang apa?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1oh4vKeVQP3Np2Xk3OOfYOki4dQ_QHFkr",
+        "https://lh3.googleusercontent.com/u/0/d/1ZlXe0ScoQQMYJCq6cRx3hLe0HTgO59lU",
+        "https://lh3.googleusercontent.com/u/0/d/1B5J-1-Le6MPoS9w7h0GTTlEMlcMAUdon",
+        "https://lh3.googleusercontent.com/u/0/d/18YIQJcIHdw9bpkHZwlBCVQyADubb1Q1w"
+    ], correct1: 1,
+
+    q2: "2. Besok ingin kemana?",
+    a2: ["毎日たくさんの荷物", "家でずっと寝るつもりです", "とても疲れました"], correct2: 1},
+
+{ isDouble: true,
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Tentang Acara Televisi</i>",
+    img: "https://lh3.googleusercontent.com/u/0/d/1X5hJnJQQNiiX3SoVo7LBxqXhK9dilFtA",
+    q1: "1. Siaran sepakbola jam berapa?",
+    a1: ["20.00", "21.00", "20.30"],
+    correct1: 0,
+    q2: "2. Berita tentang makanan di channel apa?",
+    a2: ["さくらテレビ", "JPNテレビ", "ABCテレビ"],
+    correct2: 0},
+
+{ isDouble: true,
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Tentang Air</i><br><br>お知らせ<br><br>マンションのみなさまへ。<br><br>明日、水道の工事があります。<br>水道の大きなくだをなおしますから、水を使うことができません。<br><br>日： 2026年2月15日<br>時間： 午前9時から午後3時まで<br><br>【大たいせつなお願い】<br>午後3時に工事がおわった あと、はじめに出る水は茶色いかもしれません。もし水が茶色いときは、5分ぐらい水を出し続けてください。水がきれいになってから、使ってください。<br><br>ご協力お願いいたします",
+    q1: "1. Sampai jam berapa?",
+    a1: ["Jam 09.00", "Jam 03.00", "Jam 15.00"],
+    correct1: 2,
+    q2: "2. Jika keluar air warna cokelat harus bagaimana?",
+    a2: ["Buka kran air selama 3 menit", "Buka kran air selama 5 menit", "Tutup kran air selama 5 menit"],
+    correct2: 1},
+
+{ isDouble: true,
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Pamflet Menu Makanan</i>",
+    img: "https://lh3.googleusercontent.com/u/0/d/1H2UGKBKzDUeDDF9emNsQ13_Bk2Ofg7On",
+    q1: "1. Apa menu hari Jum'at?",
+    a1: ["Kare Set", "Sushi Set", "Tempura Set"],
+    correct1: 2,
+    q2: "2. Sushi set harganya berapa?",
+    a2: ["700円", "800円", "900円"],
+    correct2: 2},
+
+{ isDouble: true,
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Pamflet Koper</i>",
+    img: "https://lh3.googleusercontent.com/u/0/d/1pV1mMwf8afQ5yHy_F19AT7mt68O6mPRE",
+    q1: "1. Apa keunggulan koper itu?",
+    a1: ["いろいろな色", "こわれやすい", "はこびにくい"],
+    correct1: 0,
+    q2: "2. Ketika membeli koper sekarang mendapatkan apa?",
+    a2: ["飲み物", "サービス", "りょこうクーポン"],
+    correct2: 1},
+
+{ isDouble: true,
+    situasi: "<i><b>Informasi dalam Dokkai</b></i><br><i>Tentang Hotel/Penginapan</i><br><br>ホテルの レビュー<br><br>先週、私は 家族とさくらホテルにとまりました。<br><br>このホテルは、海うみの近くにあります。夕方、部屋の窓から見る景色は本当にきれいでした。空が赤くて、すばらしい夕方のけしきを楽しむことができました。<br><br>しかし、あまりよくなかったこともあります。ホテルの中はぜんぜんしずかではありませんでした。とくにごはんのは、レストランがとてもうるさかったです。<br><br>人が多くて、にぎやかすぎました。ゆっくりごはんを食べることができなくて、ざんねんでした。",
+
+    q1: "1. Kenapa memilih menginap disitu?",
+    a1: ["Kamarnya bersih", "Tempatnya jauh dari laut", "Pemandangannya bagus di sore hari"],
+    correct1: 2,
+    q2: "2. Apa yang kurang bagus di penginapan itu?",
+    a2: ["Waktu makan tidak tenang, karena berisik", "Hotelnya dekat dengan laut", "Kamar hotelnya kotor"],
+    correct2: 0},
+
+];
+
+semuaPaket["PAKET KUROI"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1-wtbUM3z-tBpwhfwwUgZs-P78ezThgCY",
+            a: ["", "くろい", "", ""], correct: 1 },
+ 
+];
+
+semuaPaket["PAKET KUTSUSHITA"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1nphy2GhTA5B222jj7t04ibedoGDFFZLg",
+            a: ["靴下 : くつした", "靴 : くつ", "辞書 : じしょ"], correct: 0 },
+
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1p_47W3B8dzFxRm0Grln_3L-QzgyLj4-i",
+            a: ["校長 : こうちょう", "歌手 : かしゅ", "映画 : えいが"], correct: 1 },
+
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1tFDCrJMx6yBOc3xQYhm_6O0cmWnPfRn1",
+            a: ["散歩します : さんぽします", "見学します : けんがくします", "泳ぎます : およぎます"], correct: 2 },
+
+        { q: "このきょうしつで、<b>男</b>のほうがおおいです。<br><br>Di kelas ini, laki-laki lebih banyak.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["おんな", "おばあさん", "おとこ"], correct: 2 },
+
+        { q: "雨がふったら、イベントが<b>中止</b>されます。<br><br>Jika hujan turun, acaranya akan dibatalkan.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["ちょうし", "ちゅうし", "なかとまる"], correct: 1 },
+
+        { q: "<b>同じ</b>くつを買ってください。<br><br>Tolong belikan sepatu yang sama.<br><br><i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["おなじ", "なんじ", "たからくじ"], correct: 0 },
+
+        { q: "日本のラ－メンは .......... です。<br><br>Ramen Jepang itu enak.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["おいしい", "べんり", "からい"], correct: 0 },
+
+        { q: "道にまよって、１０分ぐらい .......... 。<br><br>Karena tersesat di jalan, akan terlambat sekitar 10 menit.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["かえります", "かかります", "おくれます"], correct: 2 },
+
+        { q: "けっこんしきの .......... におかねをあげます。<br><br>Memberikan uang untuk perayaan/hadiah pernikahan.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["おいわい", "おいのり", "あさごはん"], correct: 0 },
+
+        { q: ".......... でくすりをもらってから、行きます。<br><br>Setelah menerima obat di rumah sakit, akan pergi.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["公園 : こうえん", "病院 : びょういん", "郵便 : ゆうびん"], correct: 1 },
+
+        { q: "A: ダダンさん、朝はパンをたべますか。<br>B: はい、でもときどきご飯を .......... 。<br><br>A: Dadan-san, pagi apakah makan roti?<br>B: Iya, tapi kadang-kadang makan nasi.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["洗います", "飲みます", "食べます"], correct: 2 },
+
+        { q: "へやの .......... に入ってください。<br><br>Silahkan masuk ke dalam kamar.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["中 : なか", "外 : そと", "上 : うえ"], correct: 0 },
+
+         { q: "A: 今日はいい天気ですね。<br>B: はい、すずしくて .......... 。<br><br>A: Hari ini cuacanya bagus, ya.<br>B: Iya, sejuk dan terasa nyaman.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["気持ちが悪いです", "気持ちがいいです", "気持ちがよくないです"], correct: 1 },
+
+         { q: "A: さいふが .......... 。<br>B: かばんのなかに見ましたか。<br>A: はい、見ました。<br><br>A: Dompetnya tidak ada.<br>B: Sudah lihat di dalam tas?<br>A: Iya, sudah lihat.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["ありません", "かいます", "いません"], correct: 0 },
+
+         { q: "A: けっこんのパーティーへどんな服を着ればいいですか？ .......... 。<br>B: ワンピースのふくとかスーツを着たほうがいいですよ。しろいふくはだめです。<br>A: はい、見ました。<br><br>A: Sebaiknya pakai baju apa ya ke pesta pernikahan? Bisa tolong beri tahu?<br>B: Lebih baik pakai terusan (dress) atau setelan jas. Baju putih tidak boleh.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["買ってもらえませんか", "教えてもらえませんか", "食べてもらえませんか"], correct: 1 },
+
+         { q: "A: コピーが終わりましたか？<br>B: あと１５分ぐらい .......... 。<br>A: はい、つぎもってきてください。<br><br>A: Apakah fotokopinya sudah selesai?<br>B: Sepertinya akan selesai sekitar 15 menit lagi.<br>A: Baik, nanti tolong bawakan ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["おわるそうです", "おわるようです", "おわりそうです"], correct: 2 },
+
+         { q: "A: すみません、みどり駅まで ......... 。<br>B: １８０円です。<br><br>A: Permisi, sampai Stasiun Midori berapa harganya?<br>B: 180 Yen.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["いくらですか", "どうですか", "なんじですか"], correct: 0 },
+
+         { q: "A: 今度、会社の人はベトナム人だけど、ベトナムの料理のおすすめはありますか？<br>B: バインカンというベトナムのうどんがおいしいですよ。.......... 食べてみてください。<br>A: はい、食べてみます。<br><br>A: Nanti, sama orang kantor yang orang Vietnam, apakah ada rekomendasi masakan Vietnam?<br>B: Ada mi Vietnam namanya Banh Canh yang enak, lho. Kalau suka/Kalau mau, silakan coba dimakan.<br>A: Iya, saya akan coba makan.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["げんきです", "よかったら", "いい天気なら"], correct: 1 },
+
+         { q: "A: 昨日、やすんだそうですね。<br>B: はい、かぜと熱があったので、<br>A: でも、今日はだいじょうぶですか？<br>B: はい、だいじょうぶです。........... なります。<br><br>A: Katanya kemarin kamu libur/istirahat ya.<br>B: Iya, karena saya pilek dan demam,<br>A: Tapi, apakah hari ini sudah tidak apa-apa?<br>B: Iya, sudah tidak apa-apa. Sudah sehat.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["元気に : げんきに", "天気に : てんきに", "悪く : わるく"], correct: 0 },
+
+         { q: "A: なにしているんですか？<br>B: ネットショップでものを見ています、前のはこわれたので、また買いたいです。<br>A: .......... 。はやく買ったほうがいいですよ。<br><br>A: Sedang apa?<br>B: Lagi lihat-lihat barang di toko online, karena yang lama rusak, jadi ingin beli lagi.<br>A: Wah, itu merepotkan/susah ya. Lebih baik segera beli, lho.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["それは", "それはいいですね", "それはこまりましたね"], correct: 2 },
+
+         { q: "A: またきてくださいね、 ......... 。<br>B: はい、ありがとうございました。<br><br>A: Datang lagi ya, hati-hati (di jalan).<br>B: Iya, terima kasih banyak.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["いいえげんきです", "きをつけて", "おかげさまで"], correct: 1 },
+
+         { q: "A: 今日の夜、カラオケに行きましょうか。<br>B: いいですね。<br>A: ７じにいきましょう。<br>B: はい、わかりました。.......... 。<br><br>A: Malam ini, bagaimana kalau pergi karaoke?<br>B: Boleh juga ya.<br>A: Ayo pergi jam 7.<br>B: Iya, mengerti. Menantikannya/Sangat tidak sabar.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["たのしみです", "おつかれさま", "きをつけて"], correct: 0 },
+
+         { q: "A: どうやってきりますか。<br>B: かたぐらいまできって、まえがみが .......... してください。<br><br>A: Mau dipotong bagaimana?<br>B: Potong sampai kira-kira sebahu, dan tolong poninya jadi pendek.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+         a: ["重く : おもく", "長く : ながく", "短く : みじかく"], correct: 2 },
+
+
+        // TIPE 1: Soal Tunggal
+        { situasi: "<i><b>Simak dengan teliti</b></i><br>Percakapan Kris-san dan Tanaka-san.<br><br><b>Tanaka-san:</b> クリスさん、いつもカレーのりょうりかたはどうですか。<br><b>Kris-san:</b> トマトソースをつかって、ワインも使います。たなかさんはどうですか。<br><b>Tanaka-san:</b> 私はチョコレートを使います。おいしいですよ。<br><b>Kris-san:</b> そうですか。わたしもそのつくりかたをしてみます。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/cqbd638xo7sxa5t4z6p9o/khutsushuta-1.mp3?rlkey=oslb6mbh9hjbua8iymirri33y&st=ysgax4xj&dl=0",
+            q: "Kris-san akan memasak apa?",
+            a: ["トマトソース", "ワイン", "チョコレート"], correct: 2},
+
+        // TIPE 1: Soal Tunggal
+        { situasi: "<i><b>Simak dengan teliti</b></i><br>Percakapan Yumiko-san dan Yamada-san.<br><br><b>Yumiko-san:</b> やまださん、なつやすみはどこにいきますか。<br><b>Yamada-san:</b> やまにのぼります。ゆみこさんはどうですか。><br><b>Yumiko-san:</b> わたしはかいしゃのひととうみにりよこうします。<br><b>Yamada-san:</b> いいですね。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/hnt6yte4fyja8db0w2ski/khuttsushuta-2.mp3?rlkey=0qs4t45mqjf0vxqhyw6lgfgf6&st=1opb8qyq&dl=0",
+            q: "Yumiko-san akan pergi kemana?",
+            a: ["庭 : にわ", "山 : やま", "海 : うみ"], correct: 2},
+
+        // TIPE 2: Soal Tunggal
+        { situasi: "<i><b>Simak dengan teliti</b></i><br>Percakapan Ari-san dengan temannya.<br><br><b>Teman:</b> アリさんいま、どこにすんでいますか。<br><b>Ari-san:</b> えきからちかくて、みせがいっぱいところにすんでいます。<br>べんりだけどみどりがないので、みどりがおおいところにすみたいです。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/17mbo03kq98zksjf1x0ze/khutsushita-3.mp3?rlkey=9n60f27x2s663urk5vmn8vlh8&st=oxhxiouk&dl=0",
+            q: "Ari-san sekarang tinggal dimana?",
+            a: [
+        "https://lh3.googleusercontent.com/u/0/d/19nBlfy2JCIHVyOQU618SkPtQ2wb6mtjO",
+        "https://lh3.googleusercontent.com/u/0/d/1ZDi99QYu-VwVCLFVFOtYUe3mdgHQt-cz",
+        "https://lh3.googleusercontent.com/u/0/d/1HCQ-C1gA-Xhavo7KDlakCukN7VV3qwDu",
+        "https://lh3.googleusercontent.com/u/0/d/15LPjbOfdw4q-lLOl0apejlVn8On5S82C"
+            ], correct: 1 },
+
+        // TIPE 3: Soal DOUBLE
+        { isDouble: true,
+            situasi: "<i><b>Simak dengan teliti</b></i><br>Pengumuman di supermarket.<br><br>スーパーのおしらせです。<br><br>スーパーは８かいまでです。１かいから６かいまではせいかつしょうひんです。レストランが７かいにあります。８かいはちゅうしゃ じょうです。ごご８じになったら、かいだんやエスカレーターがつかえない ので、エレベーターをつかってください。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/du506ngidjb9pjnj18067/khutsushita-4.mp3?rlkey=35erutlri4m9tkx6kzihcgkmv&st=cvrzznsj&dl=0",
+
+            q1: "1. Restoran ada dilantai berapa?",
+            a1: ["７かい", "８かい", "３かい"], correct1: 0,
+
+            q2: "2. Setelah jam 8 malam, memakai apa?",
+            a2: [
+        "https://lh3.googleusercontent.com/u/0/d/1897fNaLG4rSVOGzyo7z3gxzyk35CoLWp",
+        "https://lh3.googleusercontent.com/u/0/d/17zq3rPEwSCuYCu90ZChVS8WMAJ6H2Esk",
+        "https://lh3.googleusercontent.com/u/0/d/1KfhH0w9_XhmAID1KPDCF5iunNpHW3vOU",
+        "https://lh3.googleusercontent.com/u/0/d/1-Q0xcRpd6NR04VIydmGm1_vFWaJDc2S_"
+            ], correct2: 2},
+
+        // TIPE 3: Soal DOUBLE
+        { isDouble: true,
+            situasi: "<i><b>Simak dengan teliti</b></i><br>Percakapan guru dan murid.<br><br><b>Guru:</b> ほんやへ行って、あおいボールペンをよんほんとA4 のかみをにじゅうごまいかってください。<br><b>Murid:</b> はい、わかりました。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/yrgkf6cze78avtg9dfg0d/khutsushita-5.mp3?rlkey=ex66xp9dxkgp54zsvexezoew9&st=3vj8g7im&dl=0",
+
+            q1: "1. Bolpoin apa yang akan dibeli?",
+            a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1FHNxau7ROUB4dA6ZkqU-bBdtYKfvDQjw",
+        "https://lh3.googleusercontent.com/u/0/d/1bDBOlFYbgu5ItzudaQyBZ2_BG0AQTy-X",
+        "https://lh3.googleusercontent.com/u/0/d/196qyFU5KcREIgH8JFWaSchcGmAV6_Slp",
+        "https://lh3.googleusercontent.com/u/0/d/12SRl_Gc6sxnSDyAu8BwQZAnEUNLoJFcH"
+            ], correct1: 1,
+
+            q2: "2. Kertasnya beli berapa lembar?",
+            a2: ["20まい", "23まい", "25まい"], correct2: 2},
+
+        // TIPE 1: Soal Tunggal
+        { situasi: "<i><b>Simak dengan teliti</b></i><br>Percakapan penjual dan pembeli.<br><br><b>Penjual:</b> いらしゃいませ。<br><b>Pembeli:</b> ステーキのにくがありますか。<br><b>Penjual:</b> はい、あります。<br><b>Pembeli:</b> いくらですか。<br><b>Penjual:</b> これは８００えんです。やわらかくておいしいにくです。５００えんのにくもあります。<br><b>Pembeli:</b> やすいのほうを２つください。<br><b>Penjual:</b> もっとやすいにくもありますよ。バーベキューのが３８０えんです。<br><b>Pembeli:</b> きょうはステーキにくだけでいいです。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/kx8m4jrqzl9v0mxii7cxo/khutsushita-6.mp3?rlkey=d7i4qx9sbpocjnkz3si7db4u0&st=r54k6315&dl=0",
+            q: "Daging harga berapa yang akan dibeli?",
+            a: ["３８０円", "５００円", "８００円"], correct: 1},
+
+        // TIPE 2: Soal Tunggal
+        { situasi: "<i><b>Simak dengan teliti</b></i><br><br><b>Laki-laki:</b> すみません、みなみこうえんにいきたいんですが。どうやっていきますか。<br><b>Perempuan:</b> ここからひかりえきまであるいて、ついたらバスがあります。<br><b>Laki-laki:</b> はい、わかりました。",
+            audio: "https://dl.dropboxusercontent.com/scl/fi/ax3spaoveqpma4wd64lbg/khutsushita-7.mp3?rlkey=lp2pn527svpss1minrkbq1w83&st=2b0wp6rw&dl=0",
+            q: "Pergi ke Minami Kouen naik apa?",
+            a: [
+        "https://lh3.googleusercontent.com/u/0/d/1mo-ceFgoM_EEoN36lWFVCwvIr_bnSIfc",
+        "https://lh3.googleusercontent.com/u/0/d/1BFhD2gIGMe8Hudhl6_cY-7XCKwOtR9Pk",
+        "https://lh3.googleusercontent.com/u/0/d/1IBoQgHQUWotzVxIDotW1Zoi5V9JpUlcI",
+        "https://lh3.googleusercontent.com/u/0/d/189g_h4YGEGC_U4h_SCF-5PnspnppnhIS"
+            ], correct: 2 },
+
+
+
+
+
+
+
+ ];
+
+semuaPaket["PAKET OKAASAN"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1BjDrara9flJTq9pYKeBzRWHqw0V-h9Gp",
+            a: ["", "", "", "お母さん"], correct: 3},
+
+];
+
+semuaPaket["PAKET OKIMASU"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1b3NMjebDkf_5xZ96dLTqTMZ_WvJySiUg",
+            a: ["", "", "おきます", ""], correct: 2},
+
+];
+
+semuaPaket["PAKET PANDA"] = [
+        
+{          q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1N7P9f_5BgtAuCydxLCkkmO17jhOD-2uw",
+            a: ["パンダ", "", "", ""], correct: 0},
+ ];
+
+semuaPaket["PAKET SAIFU"] = [
+        
+            { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1u5zIutXdO0zUm0z35Bjmx0ku_RrDcV5i",
+            a: ["鞄 : かばん", "財布 : さいふ", "靴 : くつ", "帽子 : ぼうし"], correct: 1 },
+
+            { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1rj1vl8-JKDAx8r_Im_4_Ioq1bJtIYlke",
+            a: ["スプーン", "フォーク", "さら", "グラス"], correct: 0 },
+
+            { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1PspRb-iDExYJeck5H_NbfrywwWlyST8m",
+            a: ["可愛い : かわいい", "嬉しい : うれしい", "怖い : こわい", "笑う : わらう"], correct: 2 },
+
+            { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1HNW6S5ppXvjCKaaxCdM3mupAMTcBCAF5",
+            a: ["脱ぐ : ぬぐ", "履く : はく", "被る : かぶる", "汚れる : よごれる"], correct: 3 },
+
+
+        { q: "山田さんは図書館で本を<b>借ります</b>。<br><br>Yamada-san meminjam buku di perpustakaan.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["かえります", "かります", "しります", "します"], correct: 1 },
+
+        { q: "すみまあせん、電気を<b>消して</b>ください。<br><br>Permisi, tolong matikan lampu.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["どうして", "つけて", "かして", "けして"], correct: 3 },
+
+        { q: "<b>去年</b>、大学をそつぎょうしました。<br><br>Tahun lalu, (saya) lulus dari universitas.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["らいねん", "きょねん", "おととし", "ことし"], correct: 1 },
+
+        { q: "私の町へ<b>遊び</b>に来てください。<br><br>Silahkan datang bermain ke kota saya.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["すいようび", "えらび", "かようび", "あそび"], correct: 3 },
+
+        { q: "あそこは<b>危ない</b>ですから、入らないでください。<br><br>Di sana berbahaya, jadi tolong jangan masuk.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["すくない", "あぶない", "いかない", "いけない"], correct: 1 },
+
+        { q: "新しい<b>時計</b>を買いましました。<br><br>Saya sudah membeli jam tangan baru.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["えんぴつ", "はさみ", "とけい", "くつした"], correct: 2 },
+
+
+        { q: "私は<b>ひがしぐち</b>にいますよ。</b>。<br><br>Saya ada di pintu keluar timur nih.<br><br> <i>Pilihlah kanji yang tepat!</i>",
+        a: ["南口", "東口", "西口", "北口"], correct: 1 },
+
+        { q: "東京は<b>ふるい</b>町です。<br><br>Tokyo adalah kota tua.<br><br> <i>Pilihlah kanji yang tepat!</i>",
+        a: ["軽い", "重い", "古い", "熱い"], correct: 2 },
+
+        { q: "この町はふうけいが<b>うつくしい</b>ので、ゆうめいです。<br><br>Kota ini terkenal karena pemandangannya indah.<br><br> <i>Pilihlah kanji yang tepat!</i>",
+        a: ["寂しい", "美しい", "詳しい", "美味しい"], correct: 1 },
+
+        { q: "アラさんはきれいで<b>しんせつな</b>人です。<br><br>Ara-san adalah orang yang cantik dan baik hati.<br><br><i>Pilihlah kanji yang tepat!</i>",
+        a: ["大切な", "季節な", "親切な", "上手な"], correct: 2 },
+
+        { q: "これはお祝いのときたべる<b>とくべつな</b>りょうりです。<br><br>Ini adalah makanan istimewa yang dimakan pada saat perayaan.<br><br><i>Pilihlah kanji yang tepat!</i>",
+        a: ["特別な", "親切な", "季節な", "上手な"], correct: 0 },
+
+
+        { q: "ここはきんえんですから、......... をすっちゃだめです。<br><br>Karena disini area dilarang merokok, tidak diperbolehkan merokok.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["バイク", "ナイフ", "タバコ", "パソコン"], correct: 2 },
+
+        { q: "a : このラーメンはいかがですか。<br>b : .......... 。私は辛い食べ物がたべられません。<br>a : 辛くないですよ。食べてみてください。<br><br>a : Bagaimana kalau ramen ini?<br>b : Terlihat pedas ya. Saya tidak bisa makan makanan pedas.<br>a : Tidak pedas kok, silahkan dicoba.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/1FW5K6rGI00i_hZtTJVuH4eaCIwi1v-PZ",
+        a: ["辛そうですね", "辛いそう", "辛い", "辛く"], correct: 0 },
+
+        { q: "a : はじめまして、たなかです、オースㇳラリア ............... よろしくお願いします。<br>b : こちらこそよろしくお願いします。<br><br>a : Halo, perkenalkan saya Tanaka. Saya datang dari Australia. Mohon bantuannya.<br>b : Sama-sama/Saya juga mohon bantuannya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["からいきました", "からきました", "からかえりました", "からした"], correct: 1 },
+
+        { q: "a : .......... おめでとう。<br>b : ことしもよろしくね。<br><br>a : Selamat tahun baru.<br>b : Tahun ini juga mohon kerja samanya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["けっこん", "おたんじょうび", "あけまして", "あけます"], correct: 2 },
+
+        { q: "a : すみません、これは .......... ですか。<br>b : はさみです。<br><br>a : Permisi, ini apa?<br>b : Gunting.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["だれ", "なん", "どこ", "いつ"], correct: 1 },
+
+        { q: "a : えとー、どうしたんですか？。<br>b : ちょっと病気です、あたまがいたいんです。<br>a : ........ かえってくださいよ。<br>b : はい、おさきにしつれいします。<br><br>a : Hmm.. ada apa/kenapa?<br>b : Sedikit sakit, sakit kepala.<br>a : Tolong cepat pulang ya.<br>b : Iya, maaf ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["おそい", "やすい", "はやい", "はやく"], correct: 3 },
+
+        { q: "a : このマンガおもしろかったですよ。読んだことがありますか。<br>b : まだです。あとで .......... みます。<br><br>a : Komik ini menarik lho. Sudah pernah baca?<br>b : Belum, nanti saya coba baca.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["のんで", "よんで", "もって", "きって"], correct: 1 },
+
+        { q: "a : 父の誕生日に、何をしたらいいと思いますか。<br>b : ケーキが好きなので、ケーキを .......... いいと思います。<br>a : はい、いっしょに作りましょう！<br><br>a : Pada ulang tahun ayah, menurutmu sebaiknya melakukan apa?<br>b : Karena suka kue, menurutku bagus kalau membuat kue.<br>a : Ya, ayo kita buat sama-sama!<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["つくると", "つくった", "つくる", "つくります"], correct: 0 },
+
+        { q: "a : 会議のまえに、コピーしておいてくださいね。<br>b : もうおわりました。これで .......... ですか。<br>a : はい、ありがとうございます。<br><br>a : Tolong siapkan fotokopinya sebelum rapat, ya.<br>b : Sudah selesai. Apakah begini sudah benar?<br>a : Ya, Terima kasih.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["はやい", "まるい", "わるい", "いい"], correct: 3 },
+
+        { q: "a : 日本語が上手ですね。<br>b : いいえまだまだです。毎日 .......... 日本人と日本語ではなしています。<br><br>a : Mahir bahasa Jepang, ya.<br>b : Tidak, masih belum. Setiap hari sebisa mungkin saya berbicara dengan orang Jepang dalam bahasa Jepang.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["できる", "できるだけ", "できない", "できます"], correct: 1 },
+
+        { q: "a : 毎日元気ですね。何か運動しますか。<br>b : そうですね。寝る前にできるだけヨガをする .......... 。<br><br>a : Setiap hari segar bugar ya. Apakah Anda melakukan olahraga sesuatu?<br>b : Jadi begini, Saya sebisa mungkin melakukan yoga sebelum tidur.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ことができます", "にしますにします", "用にしています", "できます"], correct: 2 },
+
+        { q: "a : ナインさん、もうすぐ帰りますね。<br>b : 帰国する日はもう決まりましたか。<br>a : はい、.......... 。<br>b : そうですか、あと2週間ですね。<br><br>a : Nain-san, sebentar lagi pulang ya.<br>b : Sudahkah kamu memutuskan kapan kamu akan pulang?<br>a : Ya, aku akan pulang tanggal 10 bulan depan.<br>b : Oh, begitu, jadi tinggal dua minggu lagi.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["来月の十日にかえります", "いつでもかえります", "帰ろうと思います", "もかえります"], correct: 0 },
+
+        { q: "空港からはバスが出ています。<br><br>Kuukou kara wa basu ga dete imasu.",
+        a: ["Ada bus yang berangkat dari bandara."], correct: 0 },
+
+        { q: "だいじょうぶです。<br><br>Daijoubu desu.",
+        a: ["Tidak apa-apa"], correct: 0 },
+
+        { q: "受付までお越しください。<br><br>Uketsuke made okoshi kudasai.",
+        a: ["Silakan datang ke bagian resepsionis."], correct: 0 },
+
+        { q: "今朝は起きられなかったんです。<br><br>Kesa wa okirarenakattan desu.",
+        a: ["Tadi pagi (saya) tidak bisa bangun."], correct: 0 },
+
+        { q: "すごいと思います。<br><br>Sugoi to omoimasu.",
+        a: ["Saya pikir itu hebat/luar biasa."], correct: 0 },
+
+        { q: "食べないほうがいいよ。<br><br>Tabenai hou ga ii yo.",
+        a: ["Lebih baik jangan makan, lho."], correct: 0 },
+
+        { q: "何か持ってきたほうがいいよ。<br><br>Nanika motte kita hou ga ii yo.",
+        a: ["Lebih baik membawa sesuatu, lho."], correct: 0 },
+
+        { q: "後ほど残してください。<br><br>Nochihodo nokoshite kudasai.",
+        a: ["Tolong tinggalkan (pesan/sesuatu) nanti."], correct: 0 },
+
+        { q: "Gambar orang bertemu dan saling sapa dan bertanya.<br>あ、天気？",
+        a: ["Oh, cuacanya?"], correct: 0 },
+
+        { q: "Pokok percakapan di hari ulang tahun mau apa. Mau topi.<br>Jawaban soal : Nani ga hoshii desuka.",
+        a: ["何が欲しいですか : Apa yang Anda inginkan?"], correct: 0 },
+
+        { q: "聞きました Kikimashita<br>Sudah mendengar",
+        a: ["ききました"], correct: 0 },
+
+        { q: "引いてHiite<br>Tarik atau Kurangi<br>Ini adalah bentuk ~te dari kata kerja Hiku. Kata ini punya banyak arti tergantung konteksnya.",
+        a: ["ひいて"], correct: 0 },
+
+        { q: "安い Yasui<br>Murah",
+        a: ["やすい"], correct: 0 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Bertanya apa pekerjaan kakak laki laki.<br>Gambar Otokono Hito sedang mengajar",
+       img: "https://lh3.googleusercontent.com/u/0/d/15CAljC1TJrmN1_B1mXVReOaAxeKNBgqU",
+       q: "",
+       a: ["先生 : せんせい", "社長 : さちょう", "彼氏 : かれし"], correct: 0 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada perempuan menyuruh bawa enam buah kursi dari kamar.<br>Kamar : 部屋, へや<br>Membawa : 持ちます, もちます",
+    q1: "1. Barang apa yang harus dibawa?",
+    a1: ["机, つくえ", "本, ほん", "椅子, いす"],
+    correct1: 2,
+    q2: "2. Berapa yang harus dibawa?",
+    a2: ["むっつ", "いつつ", "よっつ"],
+    correct2: 0},
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakapan di dapur. Bertanya mau dibantu apa.<br>やさいをきってください。Yasai o kitte kudasai",
+       q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1EuvCXJLOGGhW1DliZEuUIJZ3fhMgjrn7",
+        "https://lh3.googleusercontent.com/u/0/d/16v8U-e0B17FA49Ls6JkqMb5TBoXduaxC",
+        "https://lh3.googleusercontent.com/u/0/d/12tKGTfM75IiQe2rm10eUWJykwE4dPU7s",
+        "https://lh3.googleusercontent.com/u/0/d/14pC-bRAl2MD5JK3W_euiW8Y86wEvt-89"
+        ], correct: 1, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada seorang nenek atau laki-laki ingin pergi ke Tokyo. Dan bertanya ke petugas sekitar.<br>東京に行くにはどのような乗り物が実用的ですか。<br>Tokyo ni iku ni wa, dono you na norimono ga jitsuyouteki desu ka?<br>地下鉄 : ちかてつ",
+       q: "Untuk pergi ke Tokyo, kendaraan apa yang paling praktis?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1Ays_QCKFjnNOgn9dM2vl5-q2YzeLklj3",
+        "https://lh3.googleusercontent.com/u/0/d/1Cy97PF8FnX9A_cDU_clyFyBz6M2PS7yj",
+        "https://lh3.googleusercontent.com/u/0/d/1LlGpTvwbjb33h7ex4mJCHg8jGk-5xUsi",
+        "https://lh3.googleusercontent.com/u/0/d/1W3njhl0PVjxjdV1st4EBfb1T5TTpO68Q"
+        ], correct: 3, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakapan tentang cara belajar bahasa Korea.<br>Bahasa Korea 韓国語, かんこくご<br>Drama ドラマ<br>Menonton 見ます - Televisi テレビ",
+       q: "Cara belajar bahasa Korea lewat apa?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1DdSWuoAil64k-mTJSh7PqSL43uB82M1u",
+        "https://lh3.googleusercontent.com/u/0/d/1EU-7U5SSYtTVNCNaSFI_CCIVQeeqyDsR",
+        "https://lh3.googleusercontent.com/u/0/d/1Z1bczRsS2zlsVAc_zmQbAObTvMxZBz10",
+        "https://lh3.googleusercontent.com/u/0/d/1-jcR8WKBQvnkhahZDyynh6TnGitSj07Y"
+        ], correct: 2, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Percakapan tentang seseorang memesan barang.<br>Jawabannya : Hari Sabtu",
+       q: "Penjual bertanya barangnya mau dikirim kapan?",
+       a: ["金曜日", "土曜日", "日曜日", "月曜日"], correct: 1 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada Obrolan tentang vas bunga. Vas bunga dari China dan Jepang.<br>Jawabannya : 16 Buah",
+       q: "Ada berapa buah?",
+       a: ["十四個 : じゅうよんこ", "十五個 : じゅうごこ", "十六個 : じゅうろっこ", "十八個 : じゅうはっこ"], correct: 2 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada sebuah benda untuk tempat osake.",
+       q: "Benda ini di gunakan untuk apa?",
+       a: ["Untuk tempat Osake", "Untuk hiasan kamar", "Untuk di dapur", "Untuk vas bunga"], correct: 0 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Pengumuman di toko, tentang Natal.<br>何が売られている : Nani ga urarete iru?<br>うわぎ : Pakaian luar<br>Lantai 4",
+    q1: "1. Apa yang dijual?",
+    a1: ["服", "上着", "おさけ"],
+    correct1: 1,
+    q2: "2. Di lantai berapa yang jual?",
+    a2: ["二階 : にかい", "三階 : さんがい", "四階 : よんかい"],
+    correct2: 2},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Menjual Coat, Mantel : コート<br>七時半 : しちじはん<br>Membayar : 払います: はらいます<br>ポイントカード : Pointo kaado<br>七時半 / 七時三十分",
+    q1: "1. Sampai jam berapa?",
+    a1: ["6.30", "7.30", "8.30"],
+    correct1: 1,
+    q2: "2. Membayar pakai apa?",
+    a2: ["Point Card", "Credit Card", "Debit Card"],
+    correct2: 0},	
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Kalau malam sudah penuh.<br>にちようびごぜん : Nichiyoubi gozen",
+       q: "",
+       a: ["日曜日午前", "", "", ""], correct: 0 },
+
+
+       { situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Tentang menu makanan.<br>Jawaban : Pilih kata yang ada kanji Sapi",
+       q: "Menu makanan apa yang mengandung daging?",
+       a: ["牛", "豚", "鶏"], correct: 0 },
+
+       { situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>注文したら何がもらえるの?<br>Chuumon shitara nani ga moraeru no?<br>Apa yang didapatkan saat memesan? Minuman",
+       q: "",
+       a: ["プレゼント", "飲み物", "食べ物"], correct: 1 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Tabel jadwal kereta.<br>ななばんのでんしゃ",
+    q1: "1. Kereta nomor berapa yang ditunggu?",
+    a1: ["6", "7", "8"], correct1: 1,
+    q2: "2. Dimana menunggu transitnya?",
+    a2: ["乗り換える", "えきのり", "ところ"], correct2: 0},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Pengumuman.<br>だれでも踊りに参加できます。",
+    q1: "1. Siapa yang boleh menari?",
+    a1: ["Tiga orang", "Beberapa orang saja", "Semua orang bisa ikut menari"], correct1: 2,
+    q2: "2. Supaya tidak sakit bagaimana?",
+    a2: ["Jawaban 1", "Jawaban 2", "Pola Kalimat Nai Youni"], correct2: 2},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>家で本を読みます。<br>いえでほんをよみます。<br>Ie de hon o yomimasu.",
+    q1: "1. Apa yang dilakukan?",
+    a1: ["Sedang membaca koran", "Sedang membaca buku", "Sedang menonton televisi"], correct1: 1,
+    q2: "2. どこで本を読みますか",
+    a2: ["公園", "家", "クラス"], correct2: 1},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Informasi dalam dokkai</b></i><br><br>Tentang rapat yang diubah jadwalnya. Semula tanggal 21 menjadi tanggal 22",
+    q1: "1. Kapan rapat diadakan?",
+    a1: ["にじゅういちにち", "にじゅうににち", "にじゅうさんにち"], correct1: 1,
+    q2: "2. どこでかいぎしますか",
+    a2: ["じむしょ", "うけつけ", "かいぎしつ"], correct2: 2},
+
+ ];
+
+semuaPaket["PAKET SARADA"] = [
+        
+        { 
+            q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1fgL4v3wbMNakQP8z_-iGrW4exOdQRVHH",
+            a: ["", "サラダ", "", ""], correct: 1 
+        },
+ ];
+
+semuaPaket["PAKET SHATSU"] = [
+        
+        { 
+            q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1ZIiabpkztyCRCV_BdYzYU7vOvcU1Fif7",
+            a: ["", "", "シャツ", ""], correct: 2 
+        },
+ ];
+
+semuaPaket["PAKET SOBA"] = [
+        
+        { 
+            q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/19T3jhqxW5LGNFZNvmQ4EYwhrDGBmx3kA",
+            a: ["そば", "", "", ""], correct: 0 
+        },
+ ];
+
+semuaPaket["PAKET SORA"] = [
+        
+        { 
+            q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/105V2788Lo0oL7kBqoSemC2buT6YXg-ip",
+            a: ["", "", "空", ""], correct: 2 
+        },
+ ];
+
+semuaPaket["PAKET TANA"] = [
+        
+        { 
+            q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1S0CFUDAulACo9zWTJm1-O_ynzRS1Ijni",
+            a: ["", "", "", "たな"], correct: 3 
+        },
+ ];
+
+semuaPaket["PAKET JIMUSHITSU"] = [
+        
+
+        { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1e9n_e4EqTK2tggs--VI19epibIEzQ9z1",
+           a: ["へや", "じむしつ", "トイレ", "ほんや"], correct: 1 },
+
+        { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1ovctc9dDas5rvRvBJ0EM9Mnp3lk1xGa-",
+           a: ["かわいい", "やすい", "おいしい", "ふべん"], correct: 0 },
+
+        { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1mzZR-H5p7UPn3V6MY1OACuHaoNHqqb64",
+           a: ["おもちゃ", "かぎ", "キーホルダー", "あめ"], correct: 2 },
+
+        { q: "<i></i>",img: "https://lh3.googleusercontent.com/u/0/d/1JlqBkuQQwQotWvb8BSGcJCG7WaW_8qhF",
+           a: ["やく", "ぬすむ", "いためる", "かける"], correct: 3 },
+
+        { q: "ホールのいりぐちでなまえを .......... ください。<br><br>Silahkan menyebutkan/mengatakan nama di pintu masuk aula.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["言って", "行って", "食べて", "聞いて"], correct: 0 },
+
+        { q: "こえんにきれいな .......... がさいています。<br><br>Ada bunga cantik sedang mekar di taman.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/1e7WVSW6Q48JmM6BJVLzSXPyiJXMFFtyC",
+        a: ["木", "右", "東", "花"], correct: 3 },
+
+        { q: "えいごがすこし .......... 。<br><br>Bisa sedikit Bahasa Inggris.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/146o5CArLmCQwLQIEIvd_OxvP2LW8MdIF",
+        a: ["でています", "でます", "ことができます", "できます"], correct: 3 },
+
+        { q: "すきなかしゅがみられなくて、.......... でした。<br><br>Sayang sekali (menyesal/kecewa), karena tidak bisa melihat penyanyi kesukaan.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["大変 / たいへん", "残念 / ざんねん", "素晴らしい / すばらしい", "大好き / だいすき"], correct: 1 },
+
+        { q: "毎年<b>外国</b>へ行きたいんです。<br><br>Setiap tahun ingin pergi ke luar negeri.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["がいこく", "だいがく", "がっこう", "そとのくに"], correct: 0 },
+ 
+       { q: "毎晩、日本語を<b>勉強</b>しています。<br><br>Setiap malam belajar Bahasa Jepang.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["べんきよう", "べんきょう", "べんきょ", "べんきよ"], correct: 1 },
+
+       { q: "庭に<b>小さい</b>猫がいますね。<br><br>Ada kucing kecil di halaman loh.<br><br> <i>Pilihlah cara baca kanji Tebal dengan tepat!</i>",
+        a: ["ちいさい", "ちさい", "しさい", "ちっさい"], correct: 0 },
+
+        { q: "a : さようなら。<br>b : .......... 。<br><br>a : Selamat tinggal.<br>b : Sampai jumpa lagi.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+        a: ["はじめまして", "おだいじに", "じゃ、また", "しつれいいたします"], correct: 2 },
+
+        { q: "a : お誕生日、..........。<br>b : ありがとう。<br><br>a : Selamat ulang tahun.<br>b : Terima kasih.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+        a: ["おめでとうございます", "もうしわけありません", "すみません", "しつれいします"], correct: 0 },
+
+        { q: "しょるいのかきかたを .......... 。<br><br>Bisakah/bolehkah menjelaskan cara penulisan dokumen?<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["かってください", "きいてください", "せつめいしてもらいませんか", "かいてもいいですか"], correct: 2 },
+
+        { q: "a : 上手になるようによく日本語を使ってください。<br>b : 毎日、日本語でにっきを .......... 。<br><br>a : Tolong sering-sering gunakan bahasa Jepang supaya menjadi mahir.<br>b : Saya akan mencoba menulis buku harian dalam bahasa Jepang setiap hari.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["書いてみます", "書きませんでした", "書きました", "読みます"], correct: 0 },
+
+        { q: "a : 明日までに、パスポートをあつめてください。<br>b : だれに.......... か知っていますか？。<br><br>a : Tolong kumpulkan paspor paling lambat sampai besok.<br>b : Apakah kamu tahu harus dikumpulkan (diserahkan) ke siapa?<br>a : Ibu Guru Maria.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/1P0NMvBpVFZHRwqf0R4b7mc35_LCOcuA9",
+        a: ["読む", "聞く", "書く", "出す"], correct: 3 },
+
+        { q: "a : ポイントカードを 持ちますか。<br>b : すみません、.......... 。<br><br>a : Apakah Anda membawa kartu poin?<br>b : Maaf, saya lupa.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/15YQIV0R7OY2M8ECkx_jElm8oePFxGFi-",
+        a: ["忘れません", "忘れませんでした", "忘れてしまった", "忘れない"], correct: 2 },
+
+        { q: "a : 何を.......... 。<br>b : 水を飲みます。<br><br>a : Minum apa?<br>b : Minum air.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        img: "https://lh3.googleusercontent.com/u/0/d/1HcFdvskYUXvcTlNrnp2LM15ucUryTubS",
+        a: ["飲みます", "飲みますか", "飲まない", "飲みたくない"], correct: 1 },
+
+        { q: "妻の誕生日のプレゼントに赤いバッグを .......... 。<br><br>(Saya) memilih tas merah untuk hadiah ulang tahun istri.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["旅行します", "遊びます", "呼びます", "選びます"], correct: 3 },
+
+        { q: "a : ゆうびんきょくがどこですか。<br>b : 右にまがって.......... ゆうびんきょくがみえます。<br><br>a : Kantor pos dimana?<br>b : Belok ke kanan, dengan begitu kantor posnya akan terlihat.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["と", "そうですか", "そうすると", "なると"], correct: 2 },
+
+        { q: "a : おかしはすごくおいしいです。<br>b : よかったらもうひとつ .......... 。<br>a : はい、いただきます。<br><br>a : Camilannya sangat enak.<br>b : Kalau Anda mau (kalau suka), bagaimana kalau satu lagi?<br>a : Ya, (terima kasih) saya terima.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["どうですか", "どうしたらいいですか", "いくらですか", "いつですか"], correct: 0 },
+
+        { q: "a : この料理にソースをつけるとおいしいですよ。<br>b : 辛い料理は苦手なんだ。<br>a : 何もつけない .......... 食べてください。<br><br>a : Masakan ini kalau memakai saus enak, lho.<br>b : Aku kurang suka/tidak kuat makanan pedas.<br>a : Kalau begitu, silakan makan begitu saja (apa adanya) tanpa apa pun.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["大丈夫", "からい", "そのまま", "くらい"], correct: 2 },
+
+        { q: "a : もしもし、すみません、温水が朝から今まで出ません。..........？。<br>b : まず、温水のボタンをチェックして、出来なかったらまた電話してください。<br><br>a : Halo, permisi, air panasnya tidak keluar dari pagi sampai sekarang. Sebaiknya bagaimana ya?<br>b : Pertama, tolong cek tombol air panasnya, kalau tetap tidak bisa, silahkan telepon lagi.<br><br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["そうですか", "どうですか", "どうしたらいいですか", "いくらですか"], correct: 2 },
+
+        { q: "a : 歯が痛いときは、何を食べればいいですか？。<br>b : おかゆなど、.......... を食べてください。。<br><br>a : Saat sakit gigi, sebaiknya makan apa?<br>b : Makanlah sesuatu yang lembut, seperti bubur.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["やわらかいもの", "つめたいもの", "あまいもの", "あついもの"], correct: 0 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Dua orang laki-laki sedang berbicara, akan pergi bersama.<br>友達の家へ行きます。",
+
+       q: "Pergi kemana dua orang laki-laki itu?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1CqiXDKeqdCRnPZu3aIbE4RRUqkUtwb-F",
+        "https://lh3.googleusercontent.com/u/0/d/1p3ggB67b7gVPxDWJn-yig5qphGa4zqKa",
+        "https://lh3.googleusercontent.com/u/0/d/1_5L6OONCz4VwNs4RmaoYVNrLJIBD8cb9",
+        "https://lh3.googleusercontent.com/u/0/d/1kko3sIzQ19ZuFHrpBi22k5_zNRJ1G4N9"
+
+        ], correct: 1, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang perempuan dan temannya sedang berjalan kaki menuju rumah perempuan itu. Ketika sudah dekat rumahnya, dia mengatakan :<br>川が近くにあります。",
+
+       q: "Rumah perempuan itu dekat dengan apa?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1x-Ta6MZ3ddmvj2Krv9_64t8bCaIDIyq-",
+        "https://lh3.googleusercontent.com/u/0/d/1z27D_YTnphkiIayBbTSEfm3D57tF-EjB",
+        "https://lh3.googleusercontent.com/u/0/d/19Sp-ApDdGi9eKPNuXw0lp07uubvdl88U",
+        "https://lh3.googleusercontent.com/u/0/d/10PWlO6mtfjOwCSnBVD7KmlL8TF-p3vYi"
+
+        ], correct: 0, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Pria dan wanita sedang berbicara tentang belanja. Wanita itu ingin membeli daging ketika harga sedang murah. Laki-laki memberitahu bahwa pada hari Senin di supermarket sedang ada diskon.",
+
+       q: "Kapan perempuan itu pergi ke supermarket?",
+       a: ["スーパー", "肉", "やすい", "げつようび"], correct: 3 },
+
+        { q: "ふくおか くうこう ばすは なんばん ですか？", 
+        img: "https://lh3.googleusercontent.com/u/0/d/1UkZI_n28kFxcXVFIv95J1yMbfj_cGJwW",
+        a: ["五十四", "バス", "ふくおか", "くうこう"], correct: 0 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang laki-laki bercerita bahwa dia sangat rutin berolahraga, kemarin dia bermain tenis. Hari ini siang hari akan pergi ke gym, kemudian sore hari akan joging. Sedangkan besok akan bermain sepak bola",
+
+       q: "Apa kegiatan hari ini setelah gym?",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1mXG_bR9HbOpFTJ1-cJd6y-6QIlBWPePI",
+        "https://lh3.googleusercontent.com/u/0/d/1GPnUEy9D7rTYETpQq9zZg7dVqIvjHC1h",
+        "https://lh3.googleusercontent.com/u/0/d/1KJLkZRhdtHv-a41UhagR2mZUBndygKJN",
+        "https://lh3.googleusercontent.com/u/0/d/1pyUhx0BBfVX8ZKDMjiw4Uw5SvvU8XuuT"
+
+        ], correct: 3, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>おんなの人はじむしつにいます。<br>Onna no hito wa jimushitsu ni imasu",
+
+       q: "",
+       a: ["じむしつ", "デパート", "だいどころ", "ゆうびんきょく"], correct: 0 },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>りんごみっつとたまごふたつあります。<br>Ringo mittsu to tamago futatsu.",
+
+       q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1JZsHl5MpiXWarvSfL_KajKe1xQQRIOQx",
+        "https://lh3.googleusercontent.com/u/0/d/1z6G9gZsdD2EncyhmQEfR5-vGGfmDJMH6",
+        "https://lh3.googleusercontent.com/u/0/d/1S-ESEvRna3bxDx8WabV09vwAZiW0vM6k",
+        "https://lh3.googleusercontent.com/u/0/d/11PmZm-iqvuLE0bH9sOfUo5XTOv_Opme_"
+
+        ], correct: 3, isImageOption: true },
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>a : すみません、りょうりに使うたまごはどこにありますか？れいぞうこの中にありませんが。<br>b : あ、ごめんなさい。さっきスーパーで買ってきて、そのままつくえの上に置いてありますよ。<br>a : あ、本当だ。ありました。ありがとうございます。",
+
+       q: "Telurnya ada dimana?",
+       a: ["Di dalam kulkas", "Di bawah meja", "Di atas kulkas", "Di atas meja"], correct: 3 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Jimushitsu de, Maria wa tomodachi to hanashite imasu.<br><br>Maria : Sumimasen, happyou wa nan-ji kara desuka?<br>Tomodachi : Yoji go-fun mae desu yo. Mada jikan ga arimasu ne.<br>Maria : Sou desu ka. Jaa, matte iru aida ni  kopii-ki no heya o mite kimasu.<br>Tomodachi : Wakarimashita. Yoroshiku onegaishimasu.",
+    q1: "1. Pengumuman jam berapa?",
+    a1: ["04.05", "03.55", "04.55"],
+    correct1: 1,
+    q2: "2. Apa yang dilakukan Maria?",
+    a2: ["Memeriksa mesin fotocopy", "Memeriksa ruang fotocopy", "Meninggalkan ruang fotocopy"],
+    correct2: 1},
+
+       { situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>場所：レストラン<br>女 : Sumimasen, chuumon o onegaishimasu. Sushi setto to soba o kudasai.<br>店員 : Kashikomarimashita. Sushi setto to tsumetai soba desune?<br>女 : A, sumimasen. Chotto samui desu kara, soba wa yamemasu. Kawari ni, atatakai misoshiru o hitotsu onegaishimasu.<br>店員 : Wakarimashita. Sushi setto to omisoshiru desu ne. Shoushou omachi kudasai.",
+
+       q: "Apa yang dipesan wanita itu?<br><i>Dalam ujian JFT, jawaban akan berupa gambar.</i>",
+       a: ["Set Sushi", "Set Sushi dan Soba", "Set Sushi dan Miso", "Soba dan Miso"], correct: 2 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>場所：事務所<br>女 : Bima-san, gogo no kaigi no junbi o shimashou.<br>男 : Hai. Nani o shitara ii desu ka?<br>女 : Bima-san wa, kaigishitsu o junbi shite kudasai. Isu o narabete, tsukue o kirei ni shite oite kudasai.<br>男 : Wakarimashita. Ara-san wa nani o shimasu ka?<br>女 : Watashi wa koko de, minna ni kubaru shiryou o tsukurimasu. Kopii mo shite okimasu.<br>男 : Wakarimashita. Jaa, itte kimasu.",
+    q1: "1. Apa yang dilakukan oleh laki-laki (Bima-san)?<br><i>Dalam ujian JFT, jawaban akan berupa gambar.</i>",
+    a1: ["Menyiapkan dokumen", "Memeriksa mesin fotocopy", "Memeriksa ruang rapat"],
+    correct1: 2,
+    q2: "2. Apa yang dilakukan oleh wanita (Ara-san)?<br><i>Dalam ujian JFT, jawaban akan berupa gambar.</i>",
+    a2: ["Memeriksa ruang rapat", "Menyiapkan dokumen", "Mengatur kursi di ruang rapat"],
+    correct2: 1},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>場所：病院<br>医者 : Ara-san, okusuri o dashite okimasu ne.<br>女 : Hai. Nomikata o oshiete kudasai.<br>医者 : Hai. Mazu, kono aoi kusuri wa, ichinichi ni ikkai nonde kudasai. Soshite, kono shiroi kusuri wa, ichinichi ni nikai desu.<br>女 : Wakarimashita. Doko ni okeba ii desu ka?<br>医者 : Atsui basho ya, mado no chikaku ni wa okanaide kudasai ne. Suzushii basho ni oite kudasai.<br>女 : Hai, wakarimashita. Arigatou gozaimasu.",
+    q1: "1. Obat warna putih diminum berapa kali sehari?",
+    a1: ["Satu kali", "Dua kali", "Tiga kali"],
+    correct1: 1,
+    q2: "2. Tempat menyimpan obat yang benar, kecuali?<br><i>Dalam ujian JFT, jawaban akan berupa gambar.</i>",
+    a2: ["Tempat yang dekat dapur", "Tempat yang sejuk", "Tempat yang panas dan dekat jendela"],
+    correct2: 2},
+
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>Tanaka-san to otouto-san wa, ashita issho ni eiga o mi ni iku yotei deshita.<br>Shikashi, kyou otouto-san wa netsu ga arimasu. Karada no choushi ga yoku arimasen. Desukara, ashita wa eigakan e ikanaide, byouin e ikimasu.<br>Tanaka-san wa otouto-san ni iimashita. 'Karada wa daijoubu desu ka. Eiga wa raishuu mi ni ikimashou.' Otouto-san wa kotaemashita. 'Hontou ni sumimasen. Sou shimashou. Raishuu o tanoshimi ni shite imasu.'<br>Futari wa raishuu no doyoubi ni eiga o mi ni iku koto ni shimashita.",
+    
+    q1: "1. Adik Tanaka kenapa?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1_WNohuzpCGoppqwTvCs63a3y2aQtMMoK",
+        "https://lh3.googleusercontent.com/u/0/d/1K1STmzSR53O3gCAxx3teRifqze0123dy",
+        "https://lh3.googleusercontent.com/u/0/d/1Ym1gRe1Jv46ZwMNGWnVcmIrEKxXxk3_u",
+        "https://lh3.googleusercontent.com/u/0/d/1RpGZAayolBGnM8DajMbCFmYEmGVcgTdj"
+    ],
+    correct1: 2,
+
+    q2: "2. Kapan Tanaka dan adiknya menonton film?",
+    a2: ["来週 Minggu depan", "明日 Besok", "今日 Hari ini"],
+    correct2: 0},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>Tanaka-san no ie no daidokoro ni, ookii reizouko ga arimasu. Kinou, Tanaka-san ga reizouko o aketa toki, 'Uwaa, nioi ga yokunai' to omoimashita.<br>Reizouko no naka ni wa, furui yasai ya, itsu katta ka wakaranai niku ga takusan arimashita. Dare no tabemono ka wakaranai node, souji ga taihen desu.<br>Tanaka-san wa kazoku ni iimashita. 'Reizouko o kirei ni tsukaimashou. Kyou kara, naka ni ireru mono ni wa, majikku de namae o kaite kudasai. Sou sureba, furuku naru mae ni taberu koto ga dekimasu yo'. <br>Kazoku wa 'Ii desu ne. Sou shimashou' to kotaemashita.",
+
+    q1: "1. Berbicara tentang apa?",
+    a1: ["れいぞうこ Kulkas", "においがよくない Bau tidak sedap", "だいどころ Dapur"],
+    correct1: 1,
+
+    q2: "2. Apa yang dilakukan agar tidak bau?",
+    a2: ["Menulis nama pada barang", "Membuang sayuran dan daging basi", "Membersihkan kulkas"],
+    correct2: 0},
+
+        { q: "トイレはどこにありますか？。",
+        img: "https://lh3.googleusercontent.com/u/0/d/12qc-6ohQCv3i4DW-HtoT_DYZX1VIaBxP",
+        a: ["1階", "2階", "1階と2階", "ありません"], correct: 2 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i>",
+    img: "https://lh3.googleusercontent.com/u/0/d/1db5UGzoYW5_mlFU_NZoLOe82-cBa50cG",
+
+    q1: "1. Berapa lama kelas Bahasa Jepang?",
+    a1: ["2時間（午後6時から午後8時まで）", "1時間（午後4時から午後5時まで", "2時間（午後1時から午後3時まで）"],
+    correct1: 2,
+
+    q2: "2. Kapan waktu kelas Bahasa Jepang",
+    a2: ["１月２２日", "１１月２日", "１１月２２日"],
+    correct2: 2},
+{ 
+    isDouble: true,
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>Jimusho ni Maria-san ga imasu. Soko e Tanaka-san ga kite, iimashita 'Maria-san, sumimasen ga, juu-ichi-ji ni ni-kai no kaigishitsu e kite kudasai. Kaigi no junbi o shimasu.'<br>Maria-san wa 'Wakarimashita' to kotaemashita. Ima wa juu-ji han desu. Maria-san wa juu-ichi-ji made jimusho de shigoto o shimasu. Sorekara kaigishitsu e ikimasu.",
+    
+    q1: "1. Perempuan itu melakukan apa?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/1uWjqLQvYYGYKlEhAvAIxFbPVTuDtYEuj",
+        "https://lh3.googleusercontent.com/u/0/d/18FT-8KV46SmVZLhfK2pR7MXYjSyR19qS",
+        "https://lh3.googleusercontent.com/u/0/d/1qppou5Zo1pO2m47c8cILdTxgpTXe0rVU",
+        "https://lh3.googleusercontent.com/u/0/d/1S0qAwJUpPKMrk1DNH6w9YmXdNnORSnPm"
+    ],
+    correct1: 1,
+
+    q2: "2. Datang jam berapa?",
+    a2: ["10時半", "11時", "10時"],
+    correct2: 1},
+
+        { q: "Jadwal <b>受付</b> うけつけ  sampai jam berapa?", 
+        img: "https://lh3.googleusercontent.com/u/0/d/1_WX9bQe7xpMlj4SU-FosEdo0VvyBJxqB",
+        a: ["午後5時", "午後5時30分", "午前5時"], correct: 0 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>Bima-san : Ara-san, iyo-iyo kyou kara Hokkaido desu ne.<br>Ara-san : Hai, totemo tanashimi desu! Demo, sono mae ni nanika tabemasen ka.<br>Bima-san : Ii desu ne. Itsumo no 'Ketayayoi' ni ikimashou. <br>Ara-san : Hai. Demo, isoganai to ikemasen. Shinkansen wa juunana-ji sanjuu-pun desu kara.<br>Bima-san : Ee, wakatte imasu. Ima, juuroku-ji desu ne.<br>Ara-san : Uketsuke wa juunana-ji made desu kara, sono mae ni nimotsu o azukemashou.<br>Bima-san : Sou shimashou. Jaa, hayaku tabete ikimashou!",
+
+    q1: "1. Dimana biasanya makan?",
+    a1: ["けたやよい", "デパート", "レストラン"],
+    correct1: 0,
+
+    q2: "2. Harus masuk ke kereta jam berapa?",
+    a2: ["16時", "17時", "17時半"],
+    correct2: 0},
+
+ ];
+
+semuaPaket["PAKET TOIRE"] = [
+        { 
+            q: "", 
+            img: "https://lh3.googleusercontent.com/u/0/d/1StOgLO9b9XzSnR9NSF739msgUQNhIE8C", // Gantilah dengan nama file gambarmu
+            a: ["だいところ", "トイレ", "じむしょ", "タクシー"], 
+            correct: 1 
+        },
+        { 
+            q: "<b>紙</b>の束 <br> <br> <i>Pilihlah cara baca kanji Tebal yang tepat!</i>", 
+            img: "https://lh3.googleusercontent.com/u/0/d/1Hn7DapOMZ-DalziDTOgRQFPPqKrQ6Nh0", // Contoh jika ada gambar gunting
+            a: ["はし", "めがね", "かみ", "はさみ"], 
+            correct: 2 
+        },
+   { q: "<b>紹介します</b> <br> <br> <i>Pilihlah cara baca kanji Tebal yang tepat!</i>", 
+            img: "https://lh3.googleusercontent.com/u/0/d/1whnM6PAnb1M-7flQsNtNEm702gaSJpcv", // Contoh jika ada gambar gunting
+            a: ["てつだいます", "わかれます", "うんてんします", "しょうかいします"], 
+            correct: 3 
+        },
+
+        { q: "昨日の<b>午前</b>は洗濯しました。<br> Kemarin pagi (saya) sudah mencuci baju. <br> <br> <i>Pilihlah cara baca kanji Tebal yang tepat!</i>", 
+            a: ["ごぜん", "ごご", "ぎゅうにく", "あさ"], 
+            correct: 0  },
+
+        { q: "ビマさんは<b>幸せ</b>ですね。<br><br> Bima-san bahagia ya! <br> <br><i>Pilihlah cara baca kanji Tebal yang tepat!</i>", 
+a: ["しらせ", "しあわせ", "はなせ", "しずか"], correct: 1 },
+
+        { q: "日本ご<b>教室</b>はどこですか?<br><br> Kelas bahasa jepang dimana? <br> <br><i>Pilihlah cara baca kanji Tebal yang tepat!</i>", 
+a: ["きょしつ", "きょうしつ", "きょしつう", "きょうし"], correct: 1 },
+
+        { q: "かいぎはもうはじまったんですね、入ることはもう ... ?<br><br> Rapatnya sudah dimulai ya!, apakah sudah tidak mungkin/tidak boleh bagi saya untuk masuk? <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+        a: ["ちょっとですか", "いちどですか", "むりですか", "だめですか"], correct: 2 },
+
+        { q: "かばんがおおきい、でも ..... です<br><br> Tasnya besar, tetapi ringan. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1ZkGwZ6R52GRNdCnZcpRhog0wOplEgtiT",a: ["重い", "軽い", "強い", "弱い"], correct: 1 },
+
+        { q: "アラさん: ビマーさん、昼ご飯いっしょに ..... ? <br> ビマさん: そう、しましょう<br><br> Ara-san : Bima-san, Bagaimana kalau kita makan siang bersama? <br> Bima-san : Begitu, Ayo kita lakukan. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+    img: "https://lh3.googleusercontent.com/u/0/d/1JUqQKk-pkyDahUgVnv-9t2am1CHfUZ1H",a: ["のみませんか", "たべませんでしたか", "たべませんか", "しりませんか"], correct: 2 },
+
+        { q: "好きな<b>季節</b>は春です。<br><br> Musim yang (saya) suka, musim semi. <br> <br> <i>Pilihlah cara baca kanji Tebal yang tepat!</i>",
+ img: "https://lh3.googleusercontent.com/u/0/d/1sg52d4oHavrIzXzo83rLsz8JvTyjGTGu",a: ["きせつ", "きせき", "きょうし", "くに"], correct: 0 },
+
+        { q: "..... にごみをすててください。<br><br> Tolong membuang sampah pada tempat sampah. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1LKyU3ke31qsDlsSeVyR6pZKG6QGiJRwl",a: ["ともだち", "うち", "ごみばこ", "じむしょ"], correct: 2 },
+
+        { q: "a. 私の家は小島高校の近くです。<br> b. もう少し小島高校だけだ。 <br> a. 次の信号をみぎに曲がってください。ああ, ........ <br> b. ここ？じゃあ、お疲れ様でした。おやすみなさい。<br><br> a. Rumah saya dekat SMA Kojima. <br> b. Sudah sedikit lagi sampai SMA Kojima, nih. <br> a. Di lampu merah berikutnya, tolong belok kanan. Ah, di sini saja sudah cukup. <br> b. Di sini? Oke, terima kasih (atas kerja kerasnya). Selamat malam. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+
+        a: ["ここでいいです", "こちらこそ", "ありがとうございます", "おやすみ"], 
+        correct: 0 },
+
+        { q: "a. うちにだれがいますか？<br> b. うちに私と妻と ..... がいます。<br> a. え、猫ですか？犬ですか？<br> b. 猫です。<br><br>a. Ada siapa dirumah?<br>b. Ada saya dan istri saya dan hewan peliharaan di rumah.<br> a. Heeee, kucing? anjing?<br> b. Kucing. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["ボトル", "ペード", "ペット", "こども"], correct: 2 },
+
+        { q: "A: すみません、コピー機の使いかたを教えていただけませんか？<br>B: いいですよ。コピー機を ..... ことがありますか？<br>A: いいえ、ありません。<br>B: そうですか。じゃ、説明しますね。<br><br>a. Permisi, bisakah Anda mengajarkan saya cara menggunakan mesin fotokopi?<br>b. Boleh saja. Apakah Anda pernah menggunakan mesin fotokopi?<br>a. Belum, tidak pernah.<br>b. Begitu ya. Kalau begitu, saya jelaskan ya.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+    img: "https://lh3.googleusercontent.com/u/0/d/14ijzjv3Mz9fqj_DBPS9G-sWBhbCGM8K9",
+    a: ["使った", "教えた", "持った", "みた"], 
+    correct: 0 
+},
+
+{ 
+    q: "あけましておめでとうございます。<br>今年もよろしくお願いします。", 
+    img: "", 
+    // Pastikan link gambar di dalam tanda kutip dan dipisahkan koma
+    a: [
+        "https://lh3.googleusercontent.com/u/0/d/1f_aC6i6Ww8B7b0nztJOj5Z1Xk61NQnLn", 
+        "https://lh3.googleusercontent.com/u/0/d/1NRn9ffFes1W0VgKATe_enxSJsgJoqSIT", 
+        "https://lh3.googleusercontent.com/u/0/d/1Xom2TEiuuuSFAtpYxkqucQLkxVCou0pR", 
+        "https://lh3.googleusercontent.com/u/0/d/11L8nv0iul25Z6WZfO7VZihJQ_YOKG6dK"
+    ], 
+    correct: 3,
+    isImageOption: true 
+},
+
+
+        { q: "a. 日本語はどうですか? <br>b. 前より、..... ようになりました。<br><br>a. Bahasa Jepang bagaimana?<br>b. Sudah bisa berbicara daripada sebelumnya. <br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["はなす", "はなせる", "はなし", "はなさない"], correct: 1 },
+
+        { q: "a. ....................... <br>b. お疲れさまでした。<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["さきにしつれいします", "これからもよろしく", "おめでとうございます", "はい"], correct: 2 },
+
+        { q: "a. どうしたんですか？<br>b. 二日酔いなんです。<br>a. それはいけませんね。二日酔いのとき、薬を飲んで、それから寝たほうがいいですよ。<br><br>a. Apa yang terjadi?<br>b. Saya sedang mabuk<br>a. Wah, itu tidak baik ya. Saat sedang mabuk, sebaiknya minum obat lalu tidur.",     
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1ubWcTnSuWNFkfSVVRPqpY7kWdzrn4L5R",
+        "https://lh3.googleusercontent.com/u/0/d/1kI4WmrLtYZT6L3FWM72nTaVOM7N4ESjZ",
+        "https://lh3.googleusercontent.com/u/0/d/1XgKbftAc5penShQyq2z8NdjCoRnds-GB",
+        "https://lh3.googleusercontent.com/u/0/d/11rJP8QOCTuY5sXwAbCueS9HXP2LbTCyb"
+    ], 
+    correct: 1,
+    isImageOption: true 
+},
+
+        { q: "a. すみません、ジュースをお願いします。<br>b. はい、かしこまりました。<br>a. なかなか、来ないんですね。<br>b. すみません、....... 。<br><br>a. Permisi, tolong jusnya.<br>b. Baik, saya mengerti.<br>a. Kok nggak datang-datang ya!<br>b. Maaf, atas keterlambatannya.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["わすれてしまいました", "おまたせしました", "わかりました", "きました"], correct: 1 }, 
+
+        { q: "a. もしもし、ビマさん。<br>b. ああ、アラさん、今 .......?<br>a. 駅にいます。すみません、時間を間違えて、15分ぐらい遅れます。<br><br>a. Halo, Bima.<br>b. Ah, Ara, sekarang ada di mana?<br>a. Ada di stasiun. Maaf, saya salah melihat waktu, saya akan terlambat sekitar 15 menit.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["どこですか", "だれですか", "どうですか", "どこ"], correct: 0 },
+
+        { q: "a. 日本語上手ですね。どうやって日本語を勉強しましたか？<br>b. そうですね。アニメを見ます。<br>a. すごいですね。<br>b. いいえ、...... 。<br><br>a. Bahasa Jepang Anda pintar ya. Bagaimana cara Anda belajar bahasa Jepang?<br>b. Begitulah. Saya menonton anime.<br>a. Hebat ya.<br>b. Tidak, belum, (kemampuan saya) masih biasa saja.<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["もちろんですよ", "じょうずですよ", "まだまだです", "そうです"], correct: 2 },
+
+        { q: "a. ビマさん、連休はどこへ行くんですか？<br>b. 連休は国の友達が来るつもりですから、...... 。<br>a. そうなんですか？<br><br>a. Bima, libur panjang mau pergi ke mana?<br>b. Karena teman dari negara asal akan datang saat libur panjang, tidak pergi ke mana-mana.<br>a. Oh, begitu ya?<br> <br> <i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["どこにも行かない", "だれも行かない", "どこへ行かない", "いかない"], correct: 0 },
+
+        { q: "a. イベントはどこで行われますか？<br>b. 広場でやります。<br>a. 雨の ..... はどうしますか？<br>b. 中止になります。<br><br>a. Acaranya diselenggarakan di mana?<br>b. Diadakan di lapangan/alun-alun.<br>a. Jika situasi/kejadian hujan bagaimana?<br>b. akan dibatalkan/dihentikan.<i><br><br>Kata yang tepat untuk mengisi bagian kosong adalah?", 
+a: ["ところ", "はず", "ばあい", "こと"], correct: 2 },
+
+        { q: "a. 暇なとき, 何をしますか？<br>b. そうですね。よく ..... 。<br> <br> a. Ketika waktu senggang, apa yang dilakukan? <br>b. Jadi begini, sering membaca majalah. <br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1tkwYMMwd-hh1Od3bPcEeqco9rRD81QQM",
+a: ["料理を作ります", "音楽を聞きます", "散歩します", "雑誌を読みます"], correct: 3 },
+
+        { q: "父と母と妹がいます。....... は4人です。<br> <br>Saya memiliki ayah dan ibu dan adik peremuan.<br>Keluarga saya empat orang. <br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+    img: "https://lh3.googleusercontent.com/u/0/d/1-xGabKGfUFHA8ruJ5tXoFTFIM-Lcx69j",
+a: ["教室", "会社", "家族", "学校"], correct: 2 },
+
+        { q: "山に登るとき、....... はとても大切です。<br> <br>Ketika mendaki gunung, persiapan/rencana itu sangat penting. <br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>", 
+a: ["写真", "計画", "靴", "頂上"], correct: 1 },
+
+       { q: "a. 仕事へ行ってきます。<br>b. ...... ,気をつけてね。<br><br>a. Saya berangkat kerja dulu ya.<br>b. Selamat jalan, hati-hati ya.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1ZH7nHM8HLrix9oCxrvBkGDCeKCVde6ET",
+a: ["いってらっしゃい", "おかえりなさい", "ただいま", "おやすみなさい"], correct: 0 },
+
+       { q: "a. このケーキ、見てください。<br>b. わあ、とても....... ね。<br>a. はい、いっしょに食べましょう。<br><br>a. Silahkan lihat kue ini.<br>b. Wah, sangat terlihat enak.<br>a. Ya, ayo makan bersama. <br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1bnL4cA14QO9YOb0hK-QZ9BCqS4qvNqNe",
+a: ["おいしいです", "おいしそうです", "おいしくないです", "おいしかったです"], 
+    correct: 1 },
+
+       { q: "a. 日本語がとても上手ですね。<br>b. ......。まだまだです。<br><br>a. Bahasa Jepang Anda sangat mahir ya!<br>b. Tidak, tidak sejauh itu. Masih belum apa-apa.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+a: ["おめでとうございます", "はい、そうです", "どういたしまして", "いいえ、そんなことないです"], 
+    correct: 3 },
+
+       { q: "a. ビマさん、昼ごはん、何を.....？<br>b. 寿司を食べたいです。<br><br>a. Bima, makan siang makan apa?<br>b. Ingin makan sushi.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1p622OgjYcVX5ipwzNZ-Oe0GTN5W8YEHL",
+a: ["食べますか", "食べませんか", "食べています", "食べないで"], 
+    correct: 0 },
+
+       { q: "a. その靴は、古いですか？<br>b. いいえ、古くないです。とても ...... 。<br><br>a. Sepatu itu, apakah sudah tua?<br>b. Tidak, tidak tua, sangat baru.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+a: ["白いです", "安いです", "新しいです", "いいです"], 
+    correct: 2 },
+
+
+       { q: "a. 週末は どうでしたか？<br>b. どこへも 行かないで、家で ...... 。<br><br>a. Bagaimana akhir pekannya?<br>b. Tidak pergi ke mana pun, (syukurlah) bisa santai di rumah.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+a: ["べんきょうしてよかった", "ゆっくりできてよかった", "しごとができてよかった", "そうじしてよかった"], 
+    correct: 1 },
+
+       { q: "a. アラさんは、日本の どこに 住んでいますか？<br>b. ....... 。<br><br>a. Ara, dimana kamu tinggal di Jepang?<br>b. Saya tinggal di Hokkaido.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+img: "https://lh3.googleusercontent.com/u/0/d/1vBBzQiTImOm5JdFzWnOIW5fLQJWBEVuE",
+a: ["北海道へ行きます", "北海道は寒いです", "北海道を知っています", "北海道に住んでいます"], 
+    correct: 3 },
+
+       { q: "a. おなかが すきましたね。いっしょに 食べませんか？<br>b. すみません、まだ、仕事が ありますから、......... 食べてください。<br><br>a. Saya lapar. Mau makan bersama?<br>b. Maaf, belum, karena masih ada pekerjaan, silahkan makan duluan.<br><br><i>Kata yang tepat untuk mengisi bagian kosong adalah?</i>",
+a: ["さきに", "ゆっくり", "いっしょに", "あとで"], 
+    correct: 0 },
+
+// Tambahkan ini ke dalam array bankSoal kamu
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang perempuan berada di restoran, ingin memesan minuman. Pelayan menawarkan menu: kopi, teh, bir, dan cola. Perempuan tersebut memilih teh dan memesan satu gelas.",
+img: "https://lh3.googleusercontent.com/u/0/d/1P9_T7UIOgMS903cPDbt5vH9qcGZpYqqg",
+    q1: "1. 女性は 何を 注文しましたか。",
+    a1: ["コーヒー", "お茶", "ビール", "コーラ"],
+    correct1: 1,
+    q2: "2. 飲み物は いくつ 注文しましたか。",
+    a2: ["1杯", "2杯", "3杯"],
+    correct2: 0
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang laki-laki ada di Bandara, bertanya kepada petugas bandara tentang pesawat yang akan ditumpanginya.<br>Informasi dari petugas bahwa pesawatnya akan berangkat jam 10.50, dan lewat gate nomor 18.",
+img: "https://lh3.googleusercontent.com/u/0/d/1alQ4NXVMTdAUU0PNed4g5X3Lo_glLlbu",
+    q1: "1. 飛行機は 何時に 出発しますか。",
+    a1: ["じゅうじ ごふん", "じゅうごじ", "じゅうじ ごじゅっぷん", "じゅうじ じゅうごふん"],
+    correct1: 2,
+    q2: "2. 入り口は 何番ですか。",
+    a2: ["じゅうはちばん", "はちばん", "はちじゅういちばん"],
+    correct2: 0
+},
+
+{ 
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Seorang perempuan bertanya kepada teman kerjanya dimana pensil dan gunting disimpan.<br>Teman itu menjawab : <br>棚の上から二つ目の引き出しにあります。<br>Tana no ue kara futatsu-me no hikidashi ni arimasu.",
+
+    q: "鉛筆とハサミはどこに置いてありますか？",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1YcjV7ac6l68TbEeqJQLpmtOLx46Kcd-f",
+        "https://lh3.googleusercontent.com/u/0/d/1aHRcznAShjIzrhxQPdbING5wMMlbga1f",
+        "https://lh3.googleusercontent.com/u/0/d/1C_d96iJweikouepuJAsKcly1SOEj6yZP",
+        "https://lh3.googleusercontent.com/u/0/d/18IZSPem-SNPPtZd8xt2jvIyLwnfoDeet"
+    ],
+    correct: 1,
+    isImageOption: true 
+},
+
+{ 
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Laki-laki dan perempuan masuk ke restoran dan menanyakan peralatan kepada pelayan. Karena peralatan habis, jadi pelayan harus lapor kepada atasan, agar nanti dipesankan.",
+
+    q: "レストランの店員は何をしますか？",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/19xJvk4kkcoZiUduOHKtVPtpfD5Hfb1Ch",
+        "https://lh3.googleusercontent.com/u/0/d/1J6Clov4eZ8p40wta7vNsQs4notx9Nm9h",
+        "https://lh3.googleusercontent.com/u/0/d/1EchW04IzWgHtbAJPamWGPKNFQ9GtGByq",
+        "https://lh3.googleusercontent.com/u/0/d/103iVoReIM1chX3zlrhKSyB_pGy-L_Ro_"
+    ],
+    correct: 0,
+    isImageOption: true 
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Orang laki-laki sedang memesan makanan lewat telepon, setelah penjual memberitahu menunya, orang itu memesan empat onigiri dan tiga sandwich.",
+img: "https://lh3.googleusercontent.com/u/0/d/16t1YBW83GL29GZnj_wUSE6pvS_XWqvEt",
+    q1: "1. おにぎりを いくつ 注文しましたか。",
+    a1: ["二つ", "三つ", "四つ", "五つ"],
+    correct1: 2,
+    q2: "2. サンドイッチを いくつ 注文しましたか。",
+    a2: ["二つ", "三つ", "四つ"],
+    correct2: 1
+},
+
+       { q: "コンビニはどこですか？",
+img: "https://lh3.googleusercontent.com/u/0/d/1a37EEzJCP7keQ0M4l052Db7DZ_sV70OH",
+a: ["サクラホテルのまえ。", "サクラホテルのとなり。", "サクラホテルのうしろ"], 
+    correct: 1 },
+
+
+{ 
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Tentang Cuaca. Dalam audio disebutkan bahwa kemarin telah terjadi hujan besar. Sedangkan hari ini cuacanya <b>晴れ</b>",
+
+    q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/14u-19A5YpW9bGUKoxEGiz5LIY1P1mXXa",
+        "https://lh3.googleusercontent.com/u/0/d/18gZjQ4iR1DC0dm4wfh6dqjGHshZy6Kit",
+        "https://lh3.googleusercontent.com/u/0/d/1jw7sfB-qT7248Gp3z7SDCGI_4FVd1l8S",
+        "https://lh3.googleusercontent.com/u/0/d/120B9PnOVaWGwexlRtseI8GnF-9Tb1rlW"
+    ],
+    correct: 2,
+    isImageOption: true 
+},
+{ 
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Dalam audio dijelaskan bahwa orang laki-laki kemarin sedang sakit. Lalu ditanya oleh temannya, bagaimana kondisi sekarang. Orang laki-laki tersebut mengatakan : <b>あたまが まだ いたい です。</b>",
+
+    q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1tDj0UZdhDsYSW5dVNk8KHVUnuSsbXQBN",
+        "https://lh3.googleusercontent.com/u/0/d/18Q_VGKLrI7uNW_3jMVCOvdgxjhdqeLTl",
+        "https://lh3.googleusercontent.com/u/0/d/1VaUvJZ_-0w6jqNku9Ifxlbla8SMDMH1B",
+        "https://lh3.googleusercontent.com/u/0/d/11rJP8QOCTuY5sXwAbCueS9HXP2LbTCyb"
+    ],
+    correct: 0,
+    isImageOption: true 
+},
+
+       { q: "Menjenguk teman di rumah sakit.<br>Nomor kamar : 三百二十五", a: ["3025", "3205", "325", "305"], correct: 2 },
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada wanita ingin mendaftar karate untuk sekali pertemuan. Satu kali pertemuan harus membayar 五百円. Wanita tersebut bertanya, apakah masih buka? apakah boleh tidak pakai seragam? apa saja yang harus dibawa?<br>Yang harus dibawa adalah uang pendaftaran dan handuk",
+    q1: "1. おんなのひとは いくら はらわなければなりませんか",
+    a1: ["500円", "55円", "50円", "5000円"],
+    correct1: 0,
+    q2: "2. おかねと なにを もっていかなければなりませんか。",
+    a2: ["ズボン", "せいふく", "タオル"],
+    correct2: 2
+},
+
+{ 
+    situasi: "<i><b>Situasi dalam audio choukkai</b></i><br><br>Ada orang bertanya tentang paket liburan ke Kyoto kepada travel agency. Paket liburan acara apa yang tiketnya sudah termasuk gratis makan. Petugas travel agency memberitahukan bahwa yang tiketnya include makan adalah 自転車のイベント。",
+
+    q: "",
+       a: [
+        "https://lh3.googleusercontent.com/u/0/d/1GnZPCkqgdv5QYvJ_myrWM6bQit9V5YIb",
+        "https://lh3.googleusercontent.com/u/0/d/16FhSd0WdNX48AWYKZlZzMGJPlswDCEyo",
+        "https://lh3.googleusercontent.com/u/0/d/1rIKt-YgsWLB0pUYyEC5yByfYk015oN2I",
+        "https://lh3.googleusercontent.com/u/0/d/1CK4VyX9EcHV0KNhKhmXuydICtKbPwpjB"
+    ],
+    correct: 1,
+    isImageOption: true 
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>今日のテレビ番組 :<br><br>6JTV: 午後6時, サッカーの試合日本対ブラジル。<br>TV7: 午後9時, テニスの試合ウィンブルドン。<br>8HBC: 午前7時30分から料理の番組があります。",
+    q1: "1. Di channel apa pertandingan sepakbola?",
+    a1: ["6JTV", "8HBC", "TV7"],
+    correct1: 0,
+    q2: "2. Acara memasak jam berapa?",
+    a2: ["午後6時", "午後9時", "午前7時30分"],
+    correct2: 2
+},
+
+{ 
+    isDouble: true,
+    // Gunakan properti ini untuk membedakan tipe tampilan di UI Anda nanti
+    type1: "image", 
+    type2: "text",
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>アンナ： もうすぐお正月ですね。日本のお正月はいつもにぎやかで、花火もたくさんありますね。<br>マリア： そうですね。とてもきれいですね。<br>アンナ： マリアさんは、お正月に何をしますか。<br>マリア： 私は旅行したいです。<br>アンナ： いいですね。どこに行きますか。<br>マリア： まだわかりませんが、静かな所がいいです。",
+    
+    // PERTANYAAN 1: Pilihan Jawaban Gambar
+    q1: "1. Bagaimana situasi saat tahun baru?",
+    a1: [
+        "https://lh3.googleusercontent.com/u/0/d/13VOvsQIBNtU7WCNgvhfs6aE-ys-NL7Sc",
+        "https://lh3.googleusercontent.com/u/0/d/10K_XEC4iWQVELZ0sMxg4kIy-FD6i_z0R",
+        "https://lh3.googleusercontent.com/u/0/d/1OafP-2MTXhtcPkUS4iQx23R-rOKmKTfF",
+        "https://lh3.googleusercontent.com/u/0/d/1q-bIHaeNtEdk1VfkAogRwFWCKfMoUkZV"
+    ],
+    correct1: 1,
+    
+    // PERTANYAAN 2: Pilihan Jawaban Teks
+    q2: "2. Ingin melakukan apa saat tahun baru?",
+    a2: ["りょこうしたいです", "はなびが みたいです", "いえに いたいです"],
+    correct2: 0
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>コインランドリーの 使い方。<br>この洗濯機は、とても 便利な機能があります。服が多いとき、たくさん 洗うことができます。 しかし、デザインが 複雑な 服は 洗わないでください。デザインが よくない可能性がありますから。",
+    q1: "1. Kenapa bisa mencuci banyak pakaian?",
+    a1: ["機能が多い洗濯機 / Kinou ga ooi sentakuki", "故障の洗濯機 / Koshou no sentakuki", "小さい洗濯機 / Chiisai sentakuki"],
+    correct1: 0,
+    q2: "2. Kenapa desain baju yang rumit tidak boleh?",
+    a2: ["デザインがいい", "デザインがよくない", "デザインが多い"],
+    correct2: 1
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>歯医者の案内<br>さくら歯科クリニックの案内<br>さくら歯科クリニックの休みは、水曜日と日曜日です。 月曜日から金曜日まで、朝は９時から始まります。夜は８時に終わります。 土曜日は、朝９時から夕方５時までです。 昼休みは毎日１時から２時までです。休み時間は、診察することができません。",
+    q1: "1. Libur hari apa?",
+    a1: ["土曜日と日曜日", "月曜日から金曜日まで", "水曜日と日曜日"],
+    correct1: 2,
+    q2: "2. Hari apa klinik tutup lebih cepat? dan jam berapa tutupnya",
+    a2: ["土曜日, 夕方５時", "土曜日, 朝９時", "水曜日, ２時"],
+    correct2: 0
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>アラ：もしもし、ビマさん。今どこですか。約束の時間は１０時ですよ。<br>ビマ：あ、アラさん、本当にすみません！今、西駅に着きました。<br>アラ：えっ、西駅？ どうしてですか。<br>ビマ：すみません、電車を間違えてしまいました。反対の電車に乗ってしまったんです。<br>アラ：そうですか。大変でしたね。今は駅のどこにいますか。<br>ビマ：今は改札を出て、西に駅います。<br>アラ：わかりました。私は東口のカフェにいますから、そこまで来てください。<br>ビマ：はい、すぐ行きます！",
+    q1: "1. Kenapa Bima terlambat?",
+    a1: ["電車を間違って", "西駅に着きました", "１０時です"],
+    correct1: 0,
+    q2: "2. Ada dimana Bima sekarang?",
+    a2: ["東口のカフェ", "西に駅", "改札"],
+    correct2: 1
+},
+
+{ 
+    isDouble: true,
+    situasi: "<i><b>Situasi dalam teks dokkai</b></i><br><br>Brosur sampah. Dalam brosur ada Nama Perusahaan yang bisa dihubungi untuk reservasi. Dan untuk barang yang akan dibuang harus dicuci terlebih dahulu sebelum dikeluarkan",
+    q1: "1. Bagaimana cara reservasi",
+    a1: ["Menghubungi nama perusahaan", "Datang ke perusahaan", "Meminta bantuan teman"],
+    correct1: 0,
+    q2: "2. Apa yang harus dilakukan?",
+    a2: ["プラスチックに入れて", "ゴミ箱に捨てる", "捨てて。取り出す前に洗います"],
+    correct2: 2
+},
+
+    ]
+
+
+let paketAktif = ""; // Tambahkan ini di baris paling atas script
+    let bankSoal = [], currentIndex = 0, correctCount = 0;
+    let selected1 = null, selected2 = null;
+
+// Daftar 21 Nama Paket
+const daftarPaket = [
+        "PAKET BASU", "PAKET CHICHI", "PAKET JIMUSHITSU", 
+        "PAKET JITENSHA", "PAKET KAGI", "PAKET KAWAII", "PAKET KOUEN", 
+        "PAKET KUDAMONO", "PAKET KUROI", "PAKET KUTSUSHITA", "PAKET OKAASAN", 
+        "PAKET OKIMASU", "PAKET PANDA", "PAKET SAIFU", "PAKET SARADA", 
+        "PAKET SHATSU", "PAKET SOBA", "PAKET SORA", "PAKET TANA", "PAKET TOIRE"
+    ];
+
+   
+
+
+
+async function bukaKunci() {
+    const gridEl = document.getElementById('grid-kunci');
+    const container = document.getElementById('kunci-container');
+    const daftarSoal = semuaPaket[paketAktif]; 
+
+    if (daftarSoal && daftarSoal.length > 0) {
+        gridEl.innerHTML = ''; 
+        let nomorUrut = 1;
+        const hurufOpsi = ["A", "B", "C", "D"];
+
+        daftarSoal.forEach((soal) => {
+            const row = document.createElement('div');
+            row.className = 'kunci-row'; // Tambahkan CSS untuk baris
+
+            if (soal.isDouble) {
+                // Jawaban 1a & 1b dalam satu baris agar hemat tempat
+                const teksA = soal.a1[soal.correct1];
+                const teksB = soal.a2[soal.correct2];
+                const isiA = teksA.startsWith('http') ? `(${hurufOpsi[soal.correct1]})` : teksA;
+                const isiB = teksB.startsWith('http') ? `(${hurufOpsi[soal.correct2]})` : teksB;
+
+                row.innerHTML = `
+                    <div class="item-kunci"><span>${nomorUrut}a</span> <b>${isiA}</b></div>
+                    <div class="item-kunci"><span>${nomorUrut}b</span> <b>${isiB}</b></div>
+                `;
+            } else {
+                const teksJawaban = soal.a[soal.correct];
+                const isiJawaban = teksJawaban.startsWith('http') ? `(${hurufOpsi[soal.correct]})` : teksJawaban;
+                row.innerHTML = `<div class="item-kunci"><span>${nomorUrut}</span> <b>${isiJawaban}</b></div>`;
+            }
+            gridEl.appendChild(row);
+            nomorUrut++;
+        });
+        container.style.display = 'flex'; 
+    }
+}
+
+function tutupKunci() {
+    document.getElementById('kunci-container').style.display = 'none';
+}
+
+function loadPaket(namaPaket) {
+    // Paksa menjadi huruf besar agar cocok dengan databaseKunci
+    paketAktif = namaPaket.toUpperCase().trim(); 
+    console.log("Paket Aktif Tersimpan: " + paketAktif);
+    
+    // ... sisa kode muat soal Anda ...
+}
+
+// 4. Inisialisasi Menu Utama
+const grid = document.getElementById('paket-grid');
+if (grid) {
+    grid.innerHTML = ""; 
+    daftarPaket.forEach(name => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-paket';
+        const duaBaris = name.replace('PAKET ', 'PAKET<br>');
+        btn.innerHTML = `<span>📁</span> ${duaBaris}`;
+        
+        btn.onclick = () => {
+            if (semuaPaket[name]) {
+                // KUNCI PERBAIKAN: Simpan nama paket ke variabel global
+                paketAktif = name; 
+                
+                bankSoal = semuaPaket[name];
+                document.getElementById('selected-label').innerText = name;
+                showScreen('start-screen');
+                console.log("Paket dipilih:", paketAktif); // Untuk cek di console
+            } else {
+                alert("Data " + name + " tidak ditemukan!");
+            }
+        };
+        grid.appendChild(btn);
+    });
+}
+
+function cekNotifikasi(namaPaket) {
+    // Ambil data soal untuk menghitung jumlahnya
+    const listSoal = typeof dataSoal !== 'undefined' && dataSoal[namaPaket] ? dataSoal[namaPaket] : [];
+    const total = listSoal.length;
+
+    // Notifikasi hanya sebagai pengingat
+    if (total < 10) {
+        alert("Sedang di update.");
+    } else if (total < 25) {
+        alert("Sesi Choukkai dan Dokkai sedang di update.");
+    }
+}
+
+// 5. Navigasi Layar
+function showScreen(id) {
+    document.querySelectorAll('.quiz-card').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
+    window.scrollTo(0,0);
+}
+
+// 6. Kontrol Kuis dengan Pop-up Keren
+async function startQuiz() {
+    const jumlahSoal = bankSoal ? bankSoal.length : 0;
+
+    // Pengecekan Notifikasi menggunakan SweetAlert
+    if (jumlahSoal < 10) {
+        await Swal.fire({
+            icon: 'warning',
+            title: 'Info!',
+            text: 'Sedang di update.',
+            confirmButtonColor: '#A986E3'
+        });
+    } else if (jumlahSoal < 25) {
+        await Swal.fire({
+            icon: 'warning',
+            title: 'Info!',
+            text: 'Sesi Choukkai dan Dokkai sedang di update.',
+            confirmButtonColor: '#A986E3'
+        });
+    }
+
+    // Eksekusi Kuis
+    currentIndex = 0; 
+    correctCount = 0;
+    if (!bankSoal || bankSoal.length === 0) {
+        alert("Soal tidak ditemukan!");
+        return;
+    }
+    showScreen('quiz-screen');
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const item = bankSoal[currentIndex];
+    if (!item) return;
+
+    selected1 = null;
+    selected2 = null;
+
+    // Progress Bar & Info
+    const progress = (currentIndex / bankSoal.length) * 100;
+    document.getElementById('progress-bar-fill').style.width = progress + "%";
+    document.getElementById('q-info').innerText = `SOAL ${currentIndex + 1} / ${bankSoal.length}`;
+    
+    // --- FITUR AUDIO (DIPERBAIKI) ---
+    const audioContainer = document.getElementById('audio-container');
+    audioContainer.innerHTML = ""; 
+
+ if (item.audio) {
+    audioContainer.style.display = "block";
+    // Kita tambahkan atribut preload dan crossorigin
+    audioContainer.innerHTML = `
+        <audio id="audio-player" controls controlsList="nodownload" preload="auto" style="width: 100%; margin-top:10px;">
+            <source src="${item.audio}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    `;
+
+    const player = document.getElementById('audio-player');
+if (player) {
+        player.pause();
+        player.currentTime = 0; // Kembalikan ke detik ke-0
+    }
+
+    // SOLUSI KUNCI: Paksa browser untuk melakukan handshake ulang ke Dropbox
+    player.load(); 
+
+    // Cek di console jika ada error spesifik
+    player.onerror = function() {
+        console.error("Kesalahan Audio: ", player.error);
+    };
+}
+
+    // --- SISANYA TETAP SAMA ---
+    const sitDiv = document.getElementById('situasi-display');
+    sitDiv.style.display = item.situasi ? "block" : "none";
+    sitDiv.innerHTML = item.situasi || "";
+
+    const imgBox = document.getElementById('img-box');
+    if (item.img && item.img !== "") {
+        imgBox.style.display = "block";
+        document.getElementById('q-image').src = item.img;
+    } else {
+        imgBox.style.display = "none";
+    }
+
+    document.getElementById('q-display').innerHTML = item.q || "";
+    document.getElementById('next-btn').style.display = "none";
+
+    universalRender(item);
+}
+
+// 7. Render Pilihan Jawaban
+function universalRender(item) {
+    const optDisplay = document.getElementById('opt-display');
+    optDisplay.innerHTML = "";
+
+    const createLayout = (qText, options, id, slot) => {
+        const wrapper = document.createElement('div');
+        wrapper.style.marginBottom = "20px";
+        
+        if (qText) {
+            const p = document.createElement('p');
+            p.style.textAlign = "center";
+            p.style.fontWeight = "normal";
+            p.innerHTML = qText;
+            wrapper.appendChild(p);
+        }
+
+        // Cek apakah pilihan berisi link gambar
+        const isImage = options.some(opt => 
+            typeof opt === 'string' && opt.startsWith('http')
+        );
+
+        const btnContainer = document.createElement('div');
+        if (isImage) {
+            btnContainer.className = "opt-grid-layout"; // Gunakan class CSS
+        } else {
+            btnContainer.className = "opt-list-layout"; // Gunakan class CSS
+        }
+
+        options.forEach((txt, i) => {
+            const btn = document.createElement('button');
+            btn.className = `option-btn ${id}`;
+            
+            if (isImage) {
+                btn.innerHTML = `<img src="${txt}" style="width:100%; border-radius:8px;">`;
+            } else {
+                btn.innerText = txt;
+            }
+
+            btn.onclick = () => {
+                if (slot === 1) selected1 = i;
+                if (slot === 2) selected2 = i;
+                document.querySelectorAll('.' + id).forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+
+                if (item.isDouble) {
+                    if (selected1 !== null && selected2 !== null) document.getElementById('next-btn').style.display = "block";
+                } else {
+                    if (selected1 !== null) document.getElementById('next-btn').style.display = "block";
+                }
+            };
+            btnContainer.appendChild(btn);
+        });
+        wrapper.appendChild(btnContainer);
+        optDisplay.appendChild(wrapper);
+    };
+
+    if (item.isDouble) {
+        createLayout(item.q1, item.a1, 'opt1', 1);
+        createLayout(item.q2, item.a2, 'opt2', 2);
+    } else {
+        createLayout(null, item.a || item.options, 'opt1', 1);
+    }
+}
+// 8. Fungsi Next & Skor
+function nextQuestion() {
+
+const player = document.getElementById('audio-player');
+    if (player) {
+        player.pause();
+        player.currentTime = 0;
+    }
+
+    const item = bankSoal[currentIndex];
+    
+    if(item.isDouble) {
+        if(selected1 === item.correct1) correctCount += 0.5;
+        if(selected2 === item.correct2) correctCount += 0.5;
+    } else {
+        if(selected1 === item.correct) correctCount++;
+    }
+
+    currentIndex++;
+    if (currentIndex < bankSoal.length) {
+        renderQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    showScreen('result-screen');
+    const totalSoal = bankSoal.length;
+    const score = Math.round((correctCount / totalSoal) * 250);
+    
+    document.getElementById('correct-count').innerText = correctCount;
+    document.getElementById('wrong-count').innerText = totalSoal - correctCount;
+    document.getElementById('final-score').innerText = score;
+
+    const resultBox = document.getElementById('result-screen');
+    const oldMsg = document.getElementById('result-message');
+    if(oldMsg) oldMsg.remove();
+
+    const messageDiv = document.createElement('div');
+    messageDiv.id = "result-message";
+    messageDiv.style.cssText = "margin: 25px 0; padding: 20px; border-radius: 15px; text-align: center;";
+
+    let statusText, saranText, bgColor, textColor;
+
+
+
+        if (score === 250) {
+            statusText = "🎉 SEMPURNA!";
+            saranText = "Luar biasa! Kamu sudah sangat siap untuk ujian JFT yang sesungguhnya.";
+            bgColor = "#d4edda"; textColor = "#155724";
+        } else if (score >= 200) {
+            statusText = "✅ SELAMAT, LULUS!";
+            saranText = "Skormu melebihi ambang batas kelulusan.<br>Pelajari lagi soal yang salah agar lebih yakin.";
+            bgColor = "#d1ecf1"; textColor = "#0c5460";
+        } else {
+            statusText = "❌ BELUM LULUS";
+            saranText = "Jangan menyerah! Skor minimal lulus adalah 200.<br>Perbanyak latihan lagi.";
+            bgColor = "#f8d7da"; textColor = "#721c24";
+        }
+
+        messageDiv.innerHTML = `<h3 style="margin:0 0 10px 0;">${statusText}</h3><p style="margin:0; font-weight:normal; font-size:14px;">${saranText}</p>`;
+        messageDiv.style.backgroundColor = bgColor;
+        messageDiv.style.color = textColor;
+
+        // Sisipkan sebelum tombol Menu Utama
+        const menuBtn = resultBox.querySelector('button');
+        resultBox.insertBefore(messageDiv, menuBtn);
+    }
+
+
+
+</script>
+<script>
+    // Mencegah Klik Kanan
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Mencegah Shortcut Keyboard (Ctrl+C, Ctrl+U, Ctrl+S, dll)
+    document.addEventListener('keydown', function(e) {
+        // Mencegah Ctrl+C (Copy)
+        if (e.ctrlKey && e.keyCode == 67) {
+            return false;
+        }
+        // Mencegah Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+        // Mencegah Ctrl+Shift+I (Inspect Element)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            return false;
+        }
+    });
+
+// Mencegah F12 (DevTools)
+document.onkeydown = function(e) {
+    if(event.keyCode == 123) {
+        return false;
+    }
+}
+
+// Opsional: Clear console secara berkala agar tidak bisa didebug
+setInterval(() => {
+    console.clear();
+    console.log("%cSTOP! Area ini khusus pengembang.", "color: red; font-size: 20px; font-weight: bold;");
+}, 1000);
+
+
+
+
+</script>
+
+<script>
+    // Cek jika halaman direfresh
+    if (performance.navigation.type === 1) {
+        // Arahkan kembali ke index.html
+        window.location.href = "index.html";
+    }
+</script>
 </body>
 </html>
