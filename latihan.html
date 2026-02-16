@@ -190,6 +190,29 @@ body{
   margin:auto;
 }
 
+   .review-item{
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.review-item.correct{
+  background:#ecfdf5;
+  border:1px solid #10b981;
+}
+
+.review-item.wrong{
+  background:#fef2f2;
+  border:1px solid #ef4444;
+}
+
+.review-item b{
+  display:block;
+  margin-top:6px;
+}
+
+
 </style>
 </head>
 
@@ -235,6 +258,12 @@ body{
   <p>Benar: <span id="correct-count">0</span></p>
   <p>Salah: <span id="wrong-count">0</span></p>
   <h1>Skor: <span id="final-score">0</span></h1>
+
+   <hr style="margin:20px 0">
+
+  <h3>Review Jawaban</h3>
+  <div id="review-container"></div> 
+   
   <button class="btn-action-green" onclick="location.reload()">🔄 MENU UTAMA</button>
 </div>
 
@@ -2181,7 +2210,46 @@ function showResult() {
         const menuBtn = resultBox.querySelector('button');
         resultBox.insertBefore(messageDiv, menuBtn);
     }
+let userAnswers = [];
 
+// SIMPAN JAWABAN USER
+function saveUserAnswer(index){
+  userAnswers[currentQuestionIndex] = index;
+}
+
+// PANGGIL DI SAAT USER PILIH OPSI
+const _oldSelectOption = window.selectOption;
+window.selectOption = function(index){
+  saveUserAnswer(index);
+  if(_oldSelectOption) _oldSelectOption(index);
+};
+
+// TAMPILKAN REVIEW
+function showReview(){
+  const review = document.getElementById("review-container");
+  review.innerHTML = "";
+
+  currentQuestions.forEach((q, i)=>{
+    const benar = userAnswers[i] === q.correct;
+
+    const div = document.createElement("div");
+    div.className = "review-item " + (benar ? "correct" : "wrong");
+
+    div.innerHTML = `
+      <strong>Soal ${i+1}</strong>
+      <b>Jawaban Anda:</b> ${q.a[userAnswers[i]] ?? "-"}
+      <b>Jawaban Benar:</b> ${q.a[q.correct]}
+    `;
+    review.appendChild(div);
+  });
+}
+
+// PANGGIL SAAT QUIZ SELESAI
+const _oldFinishQuiz = window.finishQuiz;
+window.finishQuiz = function(){
+  if(_oldFinishQuiz) _oldFinishQuiz();
+  showReview();
+};
 
 
 </script>
